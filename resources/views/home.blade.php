@@ -1,23 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.first')
+
+@section('title', trans('site.PAGE_TITLE.HOME'))
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<h1>@lang('site.PAGE_TITLE.HOME')</h1>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis fugit harum error in quisquam eligendi quas odit asperiores, ipsum sint, veritatis quaerat minima nulla corporis deserunt ut accusamus nesciunt.
 @endsection

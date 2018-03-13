@@ -13,3 +13,11 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+// mix.styles([
+//   'node_modules/tachyons/css/tachyons.min.css',
+// ], 'public/css/all.css');
+
+mix.copy('node_modules/tachyons/css/tachyons.min.css',
+  'public/css/tachyons.min.css').version();
