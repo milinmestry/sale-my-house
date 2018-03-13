@@ -19,6 +19,7 @@
           @if (Route::has('login'))
             @auth
               <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ url('/home') }}">Home</a>
+              <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ route('logout') }}">Logout</a>
             @else
               <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ route('login') }}">Sign In</a>
               <a class="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" href="{{ route('register') }}">Sign Up</a>
