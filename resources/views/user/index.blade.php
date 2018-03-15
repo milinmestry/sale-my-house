@@ -3,11 +3,15 @@
 @section('title', trans('site.PAGE_TITLE.USER'))
 
 @section('content')
+
+@includeIf('global.success')
+
 <section class="w-100 pv3 f6 ph3 ph4-ns">
   <div class="mw9 center ph3-ns bg-black-10">
     <div class="tc pt1">
       <h1 class="f2-l f4 ttu tracked">@lang('site.USER_TYPE_SELECTION')</h1>
     </div>
+
     <div class="cf ph2-ns">
       <div class="fl w-100 w-third-ns pa2">
         <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba @lang('site.SELLER_COLOR')">

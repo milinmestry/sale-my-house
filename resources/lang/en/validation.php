@@ -116,6 +116,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => Lang::get('forms.REGISTRATION.E-MAIL'),
+        'alternate_email' => Lang::get('forms.REG_SELLER.ALTERNATE_E-MAIL'),
+        'contact_landline' => Lang::get('forms.REG_SELLER.CONTACT_LANDLINE'),
+    ],
 
 ];

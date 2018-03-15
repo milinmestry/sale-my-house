@@ -25,6 +25,11 @@ class RegisterController extends Controller
 
     /**
      * Where to redirect users after registration.
+     * On this user/index page, user must select his/her role from
+     * available options:
+     * A) Seller
+     * B) Buyer
+     * C) Broker
      *
      * @var string
      */
