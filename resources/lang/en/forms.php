@@ -23,6 +23,21 @@ return [
     'ALTERNATE_E-MAIL' => 'Additional E-mail',
   ],
 
+  'REG_BUYER' => [ // BUYER Registration Form
+    'HEADING' => 'Become A Seller',
+    'PRESENT_ADDRESS' => 'Present Address',
+    'PERMANENT_ADDRESS' => 'Permanent Address',
+    'CONTACT_LANDLINE' => 'Contact Number',
+    'ALTERNATE_E-MAIL' => 'Additional E-mail',
+    'cash_in_hand' => 'Cash In Hand',
+    'homeloan_required' => 'Homeloan Required',
+    'homeloan_details' => 'Homeloan Details',
+  ],
+
+  'CASH_IN_HAND_RANGES' => [
+    // @TODO
+  ],
+
   'ERROR_MESSAGES' => [
 
   ],
