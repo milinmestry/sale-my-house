@@ -4,6 +4,7 @@ return [
     'HOME' => 'Home Page',
     'DASHBOARD' => 'Dashboard',
     'SIGN_UP' => 'Sign Up Page',
+    'SIGN_IN' => 'Sign In Page',
     'USER' => 'User Page',
   ],
   'STR_SELLER' => 'Seller',

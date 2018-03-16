@@ -67,7 +67,8 @@
         </div>
 
         <div class="mt3 tc">
-          <input class="b ph4 pv2 input-reset ba b--navy white bg-navy pointer f6 br2 dim" type="submit" value="@lang('forms.BUTTON_SAVE')"></div>
+          <input class="b ph4 pv2 input-reset ba b--navy white bg-navy pointer f6 br2 dim" type="submit" value="@lang('forms.BUTTON_SAVE')">
+        </div>
       </form>
     </div>
   </article>

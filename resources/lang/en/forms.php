@@ -1,16 +1,20 @@
 <?php
 return [
   'BUTTON_SAVE' => 'Save',
+  'BUTTON_SIGN_IN' => 'Sign In',
   'BUTTON_CANCEL' => 'Cancel',
+
   'REGISTRATION' => [ // User Registration Form
     'SIGN_UP' => 'Sign Up',
     'SIGN_IN' => 'Sign In',
+    'REMEMBER_ME' => 'Remember me',
     'NAME' => 'Name',
     'E-MAIL' => 'E-mail',
     'PASSWORD' => 'Password',
     'CONFIRM_PASSWORD' => 'Confirm Password',
     'MOBILE' => 'Mobile Number',
   ],
+
   'REG_SELLER' => [ // Seller Registration Form
     'HEADING' => 'Become A Seller',
     'PRESENT_ADDRESS' => 'Present Address',
@@ -18,6 +22,7 @@ return [
     'CONTACT_LANDLINE' => 'Contact Number',
     'ALTERNATE_E-MAIL' => 'Additional E-mail',
   ],
+
   'ERROR_MESSAGES' => [
 
   ],
