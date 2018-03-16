@@ -15,17 +15,7 @@
           <a class="link white-70 no-underline flex items-center pa2" href="/">
             <img src="/images/icons/building-1.png" class="bg-white-80  hover-bg-white pa1" title="Home">
           </a>
-          <div class="flex-grow pa3 flex items-center">
-          @if (Route::has('login'))
-            @auth
-              <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ url('/home') }}">Home</a>
-              <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ route('logout') }}">Logout</a>
-            @else
-              <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ route('login') }}">Sign In</a>
-              <a class="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" href="{{ route('register') }}">Sign Up</a>
-            @endauth
-          @endif
-          </div>
+          @include('global.top-nav')
         </nav>
       </header>
 
@@ -35,12 +25,7 @@
 
       <footer class="tc w-100 bg-navy o-70">
       @if (Route::has('login'))
-        <ul class="center dib list">
-          <li class="dib-l mb4 mb2-l pa2"><a class="white no-underline hover-gold" href="{{ route('login') }}">Sign In</a>
-          </li>
-          <li class="dib-l mb4 mb2-l pa2"><a class="white no-underline hover-gold" href="{{ route('register') }}">Sign Up</a>
-          </li>
-        </ul>
+        @include('global.footer-nav')
       @endif
       </footer>
 

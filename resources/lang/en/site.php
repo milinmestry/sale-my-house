@@ -7,6 +7,15 @@ return [
     'SIGN_IN' => 'Sign In Page',
     'USER' => 'User Page',
   ],
+
+  'MENU_LINKS' => [
+     'HOME' => 'Home',
+     'USER' => 'User',
+     'LOGOUT' => 'Logout',
+     'LOGIN' => 'Sign In',
+     'REGISTER' => 'Sign Up',
+  ],
+
   'STR_SELLER' => 'Seller',
   'STR_BUYER' => 'Buyer',
   'STR_BROKER' => 'Broker',
