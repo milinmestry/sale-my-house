@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Seller extends Model
+class Broker extends Model
 {
   use SoftDeletes;
 
@@ -17,7 +17,7 @@ class Seller extends Model
   protected $dates = ['deleted_at'];
 
   /**
-   * Get the user that is now become Seller.
+   * Get the user that is now become Buyer.
    */
   public function user()
   {

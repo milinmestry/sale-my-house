@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+  /**
+   * Instantiate a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+
   /**
    * Display a listing of the resource.
    *
@@ -13,7 +25,14 @@ class UserController extends Controller
    */
   public function index()
   {
-    return view('user.index');
+    $seller = User::find(1)->seller;
+    $buyer = User::find(1)->buyer;
+    $broker = User::find(1)->broker;
+    // $sellerRegUrl = !empty($seller) ? '' : 'seller.create';
+
+    return view('user.index', compact(
+      'seller', 'buyer', 'broker'
+    ));
   }
 
   /**

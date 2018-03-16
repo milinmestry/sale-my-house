@@ -29,7 +29,10 @@ return [
     please register yourself as Buyer.',
   'PARA_BROKER_MEANS' => 'Are you helping buyer&lpar;s&rpar;
     in purchasing a property, please register yourself as Broker.',
+
   'SUCCESS_MESSAGES' => [
     'SELLER_STORED' => 'You successfully registered as Seller.',
+    'BUYER_STORED' => 'You successfully registered as Buyer.',
+    'BROKER_STORED' => 'You successfully registered as Broker.',
   ],
 ];

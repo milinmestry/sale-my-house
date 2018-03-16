@@ -26,4 +26,28 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the Seller record associated with the user.
+     */
+    public function seller()
+    {
+        return $this->hasOne('App\Seller');
+    }
+
+    /**
+     * Get the Buyer record associated with the user.
+     */
+    public function buyer()
+    {
+        return $this->hasOne('App\Buyer');
+    }
+
+    /**
+     * Get the Broker record associated with the user.
+     */
+    public function broker()
+    {
+        return $this->hasOne('App\Broker');
+    }
 }
