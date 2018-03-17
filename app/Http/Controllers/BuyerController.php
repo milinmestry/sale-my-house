@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Lang;
 
 class BuyerController extends Controller
 {
@@ -23,7 +24,16 @@ class BuyerController extends Controller
    */
   public function create()
   {
-    return view('buyer.create');
+    $cashInHandRange = [
+      Lang::get('forms.DEFAULT_SELECT_TEXT'),
+      Lang::get('forms.CASH_IN_HAND_RANGES.INR_LT_1_LAKH'),
+      Lang::get('forms.CASH_IN_HAND_RANGES.INR_1-5_LAKH'),
+      Lang::get('forms.CASH_IN_HAND_RANGES.INR_5-10_LAKH'),
+      Lang::get('forms.CASH_IN_HAND_RANGES.INR_GT-10_LAKH'),
+    ];
+    return view('buyer.create', compact(
+      'cashInHandRange'
+    ));
   }
 
   /**

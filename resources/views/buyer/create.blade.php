@@ -66,6 +66,47 @@
           </div>
         </div>
 
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="cash_in_hand">@lang('forms.REG_BUYER.CASH_IN_HAND')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <select name="cash_in_hand" id="cash_in_hand" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns">
+                @foreach ($cashInHandRange as $cashInHand)
+                {{--  {{ old('cash_in_hand') }}  --}}
+                <option value="{{ $cashInHand  }}">{{ $cashInHand  }}</option>
+                @endforeach
+              </select>
+
+              @if ($errors->has('cash_in_hand'))
+                <small id="cash_in_hand-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('cash_in_hand') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="homeloan_required">@lang('forms.REG_BUYER.HOMELOAN_REQUIRED')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <div class="flex items-center w-20 dib">
+                <input class="mh2" type="checkbox" name="homeloan_required" id="homeloan_required_yes" value="{{ old('homeloan_required') }}">
+                <label for="homeloan_required" class="lh-copy">@lang('forms.TEXT_YES')</label>
+              </div>
+              <div class="flex items-center w-10">
+                <input class="mh2" type="checkbox" name="homeloan_required" id="homeloan_required_no" value="{{ old('homeloan_required') }}">
+                <label for="homeloan_required" class="lh-copy">@lang('forms.TEXT_NO')</label>
+              </div>
+              @if ($errors->has('homeloan_required'))
+                <small id="homeloan_required-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('homeloan_required') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
         <div class="mt3 tc">
           <input class="b ph4 pv2 input-reset ba b--navy white bg-navy pointer f6 br2 dim" type="submit" value="@lang('forms.BUTTON_SAVE')">
         </div>
