@@ -87,21 +87,35 @@
         </div>
 
         <div class="mw9 mt3 mt1-ns">
-          <div class="cf ph2-ns">
+          <div class="pr4 cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
               <label class="fw4 lh-copy f6" for="homeloan_required">@lang('forms.REG_BUYER.HOMELOAN_REQUIRED')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <div class="flex items-center w-20 dib">
-                <input class="mh2" type="checkbox" name="homeloan_required" id="homeloan_required_yes" value="{{ old('homeloan_required') }}">
+              <div class="items-center w-20 di pr3">
+                <input class="" type="radio" name="homeloan_required" id="homeloan_required_yes" value="{{ old('homeloan_required') }}">
                 <label for="homeloan_required" class="lh-copy">@lang('forms.TEXT_YES')</label>
               </div>
-              <div class="flex items-center w-10">
-                <input class="mh2" type="checkbox" name="homeloan_required" id="homeloan_required_no" value="{{ old('homeloan_required') }}">
+              <div class="items-center w-20 di pr3">
+                <input class="" type="radio" name="homeloan_required" id="homeloan_required_no" value="{{ old('homeloan_required') }}">
                 <label for="homeloan_required" class="lh-copy">@lang('forms.TEXT_NO')</label>
               </div>
               @if ($errors->has('homeloan_required'))
                 <small id="homeloan_required-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('homeloan_required') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="homeloan_details">@lang('forms.REG_BUYER.HOMELOAN_DETAILS')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="homeloan_details" id="homeloan_details" rows="3" cols="50">{{ old('homeloan_details') }}</textarea>
+              @if ($errors->has('homeloan_details'))
+                <small id="homeloan_details-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('homeloan_details') }}</small>
               @endif
             </div>
           </div>

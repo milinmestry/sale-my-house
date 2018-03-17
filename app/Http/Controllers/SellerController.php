@@ -40,7 +40,7 @@ class SellerController extends Controller
   /**
    * Store a newly created resource in storage.
    *
-   * @param  \Illuminate\Http\Request  $request
+   * @param  \Illuminate\Http\ValidateSeller  $request
    * @return \Illuminate\Http\Response
    */
   public function store(ValidateSeller $request)
@@ -63,7 +63,9 @@ class SellerController extends Controller
     $seller->contact_landline = $request->input('contact_landline');
 
     $seller->save();
-    // return redirect()->route('/user');
+
+    unset($seller);
+    
     return redirect('/user')->with(
       'status', Lang::get('site.SUCCESS_MESSAGES.SELLER_STORED'
     ));

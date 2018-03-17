@@ -23,7 +23,7 @@ class CreateBuyersTable extends Migration
             $table->char('contact_landline', 30)->nullable();
             $table->char('alternate_email', 255)->nullable();
             $table->char('cash_in_hand', 100)->nullable();
-            $table->boolean('homeloan_required');
+            $table->boolean('homeloan_required')->nullable();
             $table->json('homeloan_details')->nullable();
             $table->timestamps();
             $table->softDeletes()->nullable();

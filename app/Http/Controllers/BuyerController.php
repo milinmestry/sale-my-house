@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Buyer;
+use App\Http\Requests\ValidateBuyer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Lang;
 
 class BuyerController extends Controller
@@ -39,12 +42,32 @@ class BuyerController extends Controller
   /**
    * Store a newly created resource in storage.
    *
-   * @param  \Illuminate\Http\Request  $request
+   * @param  \Illuminate\Http\ValidateBuyer  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(ValidateBuyer $request)
   {
-    return __METHOD__;
+    $buyer = new Buyer;
+    $homeloanCollection = collect([
+      'data' => $request->input('homeloan_details')
+    ]);
+
+    $buyer->user_id = Auth::id();
+    $buyer->permanent_address = $request->input('permanent_address');
+    $buyer->present_address = $request->input('present_address');
+    $buyer->alternate_email = $request->input('alternate_email');
+    $buyer->contact_landline = $request->input('contact_landline');
+    $buyer->cash_in_hand = $request->input('cash_in_hand');
+    $buyer->homeloan_required = $request->input('homeloan_required');
+    $buyer->homeloan_details = $homeloanCollection;
+
+    $buyer->save();
+    
+    unset($buyer);
+
+    return redirect('/user')->with(
+      'status', Lang::get('site.SUCCESS_MESSAGES.BUYER_STORED'
+    ));
   }
 
   /**
