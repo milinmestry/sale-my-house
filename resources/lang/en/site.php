@@ -5,7 +5,7 @@ return [
     'DASHBOARD' => 'Dashboard',
     'SIGN_UP' => 'Sign Up Page',
     'SIGN_IN' => 'Sign In Page',
-    'USER' => 'User Page',
+    'APARTMENT' => 'Apartment Page',
   ],
 
   'MENU_LINKS' => [
@@ -14,6 +14,7 @@ return [
      'LOGOUT' => 'Logout',
      'LOGIN' => 'Sign In',
      'REGISTER' => 'Sign Up',
+     'ADD_APARTMENT' => 'Add Apartment',
   ],
 
   'STR_SELLER' => 'Seller',
