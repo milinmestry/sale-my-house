@@ -84,7 +84,7 @@
               <hr class="mw3 bb bw1 b--black-10">
             </div>
             @if (!empty($broker))
-            <p class="lh-copy measure center f6 black-70">
+            <p class="lh-copy measure center f6 @lang('site.BROKER_COLOR')">
               @lang('site.SUCCESS_MESSAGES.BROKER_STORED')
             </p>
             @else

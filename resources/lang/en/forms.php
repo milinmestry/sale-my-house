@@ -28,13 +28,19 @@ return [
 
   'REG_BUYER' => [ // BUYER Registration Form
     'HEADING' => 'Become A Buyer',
-    'PRESENT_ADDRESS' => 'Present Address',
-    'PERMANENT_ADDRESS' => 'Permanent Address',
-    'CONTACT_LANDLINE' => 'Contact Number',
-    'ALTERNATE_E-MAIL' => 'Additional E-mail',
+    // 'PRESENT_ADDRESS' => 'Present Address',
+    // 'PERMANENT_ADDRESS' => 'Permanent Address',
+    // 'CONTACT_LANDLINE' => 'Contact Number',
+    // 'ALTERNATE_E-MAIL' => 'Additional E-mail',
     'CASH_IN_HAND' => 'Cash In Hand',
     'HOMELOAN_REQUIRED' => 'Homeloan Required',
     'HOMELOAN_DETAILS' => 'Homeloan Details',
+  ],
+
+  'REG_BROKER' => [
+    'HEADING' => 'Become A Broker',
+    'AGENCY_NAME' => 'Agency Name',
+    'POSTAL_CODE' => 'Postal Code',
   ],
 
   'CASH_IN_HAND_RANGES' => [
