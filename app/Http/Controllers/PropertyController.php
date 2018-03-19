@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Helpers\MestryMilin\Form as MMFormHelper;
 
 class PropertyController extends Controller
 {
@@ -23,7 +24,12 @@ class PropertyController extends Controller
    */
   public function create()
   {
-    return view('property.create');
+    $propertyTypes = MMFormHelper::getPropertyTypes();
+    $apartmentTypes = MMFormHelper::getApartmentTypes();
+
+    return view('property.create', compact(
+      'propertyTypes', 'apartmentTypes'
+    ));
   }
 
   /**

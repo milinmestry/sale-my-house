@@ -45,6 +45,15 @@ return [
 
   'PROPERTY' => [
     'HEADING' => 'Add New Property',
+    'PROPERTY_TYPE' => 'Property Type',
+    'APARTMENT_TYPE' => 'Apartment Type',
+    'ADDRESS' => 'Address',
+    'MEASUREMENT' => 'Measurement',
+    'MARKET_PRICE' => 'Market Price',
+    'MIN_EXPECTED_PRICE' => 'Min. Expected Price',
+    'FEATURES' => 'Features',
+    'B&W_RATIO' => 'Black/White Ratio',
+    'HOMELOAN_DETAILS' => 'Homeloan Details',
   ],
 
   'CASH_IN_HAND_RANGES' => [

@@ -5,10 +5,58 @@
 @section('content')
 <div class="center">
   <article class="center mw5 mw7-ns br3 hidden ba b--black-10 mv4 shadow-1">
-    <h1 class="f4 bg-navy o-50 br3 br--top white mv0 pv2 ph3">@lang('forms.REG_PROPERTY.HEADING')</h1>
+    <h1 class="f4 bg-navy o-50 br3 br--top white mv0 pv2 ph3">@lang('forms.PROPERTY.HEADING')</h1>
     <div class="pa3 bt b--black-10 bg-white">
       <form method="POST" action="{{ route('property.store') }}" accept-charset="utf-8" autocomplete="off">
         @csrf
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="property_type">@lang('forms.PROPERTY.PROPERTY_TYPE')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <select name="property_type" id="property_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns">
+                @foreach ($propertyTypes as $oValue => $ptype)
+                  @if (old('property_type') === $oValue)
+                    <option value="{{ $oValue  }}" selected>
+                    {{ $ptype  }}</option>
+                  @else
+                    <option value="{{ $oValue  }}">{{ $ptype  }}</option>
+                  @endif
+                @endforeach
+              </select>
+
+              @if ($errors->has('property_type'))
+                <small id="property_type-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('property_type') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="apartment_type">@lang('forms.PROPERTY.APARTMENT_TYPE')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <select name="apartment_type" id="apartment_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns">
+                @foreach ($apartmentTypes as $oValue => $ptype)
+                  @if (old('apartment_type') === $oValue)
+                    <option value="{{ $oValue  }}" selected>
+                    {{ $ptype  }}</option>
+                  @else
+                    <option value="{{ $oValue  }}">{{ $ptype  }}</option>
+                  @endif
+                @endforeach
+              </select>
+
+              @if ($errors->has('apartment_type'))
+                <small id="apartment_type-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('apartment_type') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
 
         <div class="mw9">
           <div class="cf ph2-ns">
@@ -61,26 +109,6 @@
               <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="email" name="alternate_email" id="alternate_email" value="{{ old('alternate_email') }}" min="3" max="255">
               @if ($errors->has('alternate_email'))
                 <small id="alternate_email-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('alternate_email') }}</small>
-              @endif
-            </div>
-          </div>
-        </div>
-
-        <div class="mw9 mt3 mt1-ns">
-          <div class="cf ph2-ns">
-            <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="cash_in_hand">@lang('forms.REG_BUYER.CASH_IN_HAND')</label>
-            </div>
-            <div class="fl w-100 w-75-ns pa2-ns">
-              <select name="cash_in_hand" id="cash_in_hand" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns">
-                @foreach ($cashInHandRange as $cashInHand)
-                {{--  {{ old('cash_in_hand') }}  --}}
-                <option value="{{ $cashInHand  }}">{{ $cashInHand  }}</option>
-                @endforeach
-              </select>
-
-              @if ($errors->has('cash_in_hand'))
-                <small id="cash_in_hand-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('cash_in_hand') }}</small>
               @endif
             </div>
           </div>
