@@ -43,6 +43,10 @@ return [
     'POSTAL_CODE' => 'Postal Code',
   ],
 
+  'PROPERTY' => [
+    'HEADING' => 'Add New Property',
+  ],
+
   'CASH_IN_HAND_RANGES' => [
     'INR_LT_1_LAKH' => 'INR 0 - 1 Lakh',
     'INR_1-5_LAKH' => 'INR 1 - 5 Lakhs',

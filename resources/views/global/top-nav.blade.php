@@ -3,7 +3,7 @@
     @auth
       <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ url('/home') }}">@lang('site.MENU_LINKS.HOME')</a>
       <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ url('/user') }}">@lang('site.MENU_LINKS.USER')</a>
-      <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ url('/apartment') }}">@lang('site.MENU_LINKS.ADD_APARTMENT')</a>
+      <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ url('/property/create') }}">@lang('site.MENU_LINKS.ADD_PROPERTY')</a>
       <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ route('logout') }}">@lang('site.MENU_LINKS.LOGOUT')</a>
     @else
       <a class="f6 link dib white mr3 mr4-ns hover-gold" href="{{ route('login') }}">@lang('site.MENU_LINKS.LOGIN')</a>

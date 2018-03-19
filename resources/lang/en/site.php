@@ -6,6 +6,7 @@ return [
     'HOME' => 'Home Page',
     'SIGN_IN' => 'Sign In Page',
     'SIGN_UP' => 'Sign Up Page',
+    'PROPERTY' => 'Property Page',
     'USER' => 'User Page',
   ],
 
@@ -15,7 +16,7 @@ return [
      'LOGOUT' => 'Logout',
      'LOGIN' => 'Sign In',
      'REGISTER' => 'Sign Up',
-     'ADD_APARTMENT' => 'Add Apartment',
+     'ADD_PROPERTY' => 'Add Property',
   ],
 
   'STR_SELLER' => 'Seller',
