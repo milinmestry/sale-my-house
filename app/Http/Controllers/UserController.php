@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -25,10 +26,9 @@ class UserController extends Controller
    */
   public function index()
   {
-    $seller = User::find(1)->seller;
-    $buyer = User::find(1)->buyer;
-    $broker = User::find(1)->broker;
-    // $sellerRegUrl = !empty($seller) ? '' : 'seller.create';
+    $seller = User::find(Auth::id())->seller;
+    $buyer = User::find(Auth::id())->buyer;
+    $broker = User::find(Auth::id())->broker;
 
     return view('user.index', compact(
       'seller', 'buyer', 'broker'

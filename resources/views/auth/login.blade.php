@@ -17,7 +17,7 @@
               <label class="fw4 lh-copy f6" for="email">@lang('forms.REGISTRATION.E-MAIL')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="email" name="email" id="email" max="100" maxlength="100"required autofocus>
+              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="email" name="email" id="email" max="150" maxlength="150"required autofocus>
 
               @if ($errors->has('email'))
                 <small id="email-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('email') }}</small>

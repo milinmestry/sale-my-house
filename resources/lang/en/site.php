@@ -1,11 +1,12 @@
 <?php
 return [
   'PAGE_TITLE' => [
-    'HOME' => 'Home Page',
-    'DASHBOARD' => 'Dashboard',
-    'SIGN_UP' => 'Sign Up Page',
-    'SIGN_IN' => 'Sign In Page',
     'APARTMENT' => 'Apartment Page',
+    'DASHBOARD' => 'Dashboard',
+    'HOME' => 'Home Page',
+    'SIGN_IN' => 'Sign In Page',
+    'SIGN_UP' => 'Sign Up Page',
+    'USER' => 'User Page',
   ],
 
   'MENU_LINKS' => [
