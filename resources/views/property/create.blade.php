@@ -3,6 +3,7 @@
 @section('title', trans('site.PAGE_TITLE.PROPERTY'))
 
 @section('content')
+
 <div class="center">
   <article class="center mw5 mw7-ns br3 hidden ba b--black-10 mv4 shadow-1">
     <h1 class="f4 bg-navy o-50 br3 br--top white mv0 pv2 ph3">@lang('forms.PROPERTY.HEADING')</h1>

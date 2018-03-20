@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\MestryMilin\Form as MMFormHelper;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Requests\ValidateProperty;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
@@ -25,13 +27,20 @@ class PropertyController extends Controller
    */
   public function create()
   {
-    $propertyTypes = MMFormHelper::getPropertyTypes();
-    $apartmentTypes = MMFormHelper::getApartmentTypes();
-    $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
+    $seller = User::find(Auth::id())->seller;
 
-    return view('property.create', compact(
-      'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
-    ));
+    if (null === $seller) {
+      return view('property.forbidden');
+    } else {
+      $propertyTypes = MMFormHelper::getPropertyTypes();
+      $apartmentTypes = MMFormHelper::getApartmentTypes();
+      $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
+  
+      return view('property.create', compact(
+        'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
+      ));
+    }
+
   }
 
   /**

@@ -38,4 +38,8 @@ return [
     'BUYER_STORED' => 'You successfully registered as Buyer.',
     'BROKER_STORED' => 'You successfully registered as Broker.',
   ],
+
+  'FORBIDDEN' => 'Forbidden',
+  'FORBIDDEN_MESSAGE' => 'You are not allowed to access this page!',
+  'FORBIDDEN_ANCHOR_LABLE' => 'Become a Seller for Free!',
 ];
