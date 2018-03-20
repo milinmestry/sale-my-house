@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Helpers\MestryMilin\Form as MMFormHelper;
+use Illuminate\Http\Request;
+use Illuminate\Http\Requests\ValidateProperty;
 
 class PropertyController extends Controller
 {
@@ -26,21 +27,22 @@ class PropertyController extends Controller
   {
     $propertyTypes = MMFormHelper::getPropertyTypes();
     $apartmentTypes = MMFormHelper::getApartmentTypes();
+    $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
 
     return view('property.create', compact(
-      'propertyTypes', 'apartmentTypes'
+      'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
     ));
   }
 
   /**
    * Store a newly created resource in storage.
    *
-   * @param  \Illuminate\Http\Request  $request
+   * @param  \Illuminate\Http\Requests\ValidateProperty  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(ValidateProperty $request)
   {
-      //
+    //
   }
 
   /**

@@ -49,11 +49,16 @@ return [
     'APARTMENT_TYPE' => 'Apartment Type',
     'ADDRESS' => 'Address',
     'MEASUREMENT' => 'Measurement',
-    'MARKET_PRICE' => 'Market Price',
+    'MAINTENANCE_CHARGES' => 'Maintenance Charges',
+    'SALE_PRICE' => 'Sale Price',
     'MIN_EXPECTED_PRICE' => 'Min. Expected Price',
-    'FEATURES' => 'Features',
-    'B&W_RATIO' => 'Black/White Ratio',
+    'LOCALITY_FEATURES' => 'Locality Features',
+    'AMENITIES' => 'Amenities',
     'HOMELOAN_DETAILS' => 'Homeloan Details',
+    'OWNERSHIP' => 'Ownership', // Individual, Joint
+    'JOINT_OWNERS_NAME' => 'Joint Owners Name',
+    'INDIVIDUAL' => 'Individual',
+    'JOINT' => 'Joint',
   ],
 
   'CASH_IN_HAND_RANGES' => [

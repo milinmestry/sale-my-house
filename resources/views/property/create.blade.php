@@ -16,7 +16,7 @@
               <label class="fw4 lh-copy f6" for="property_type">@lang('forms.PROPERTY.PROPERTY_TYPE')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <select name="property_type" id="property_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns">
+              <select name="property_type" id="property_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns" required autofocus>
                 @foreach ($propertyTypes as $oValue => $ptype)
                   @if (old('property_type') === $oValue)
                     <option value="{{ $oValue  }}" selected>
@@ -40,7 +40,7 @@
               <label class="fw4 lh-copy f6" for="apartment_type">@lang('forms.PROPERTY.APARTMENT_TYPE')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <select name="apartment_type" id="apartment_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns">
+              <select name="apartment_type" id="apartment_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns" required>
                 @foreach ($apartmentTypes as $oValue => $ptype)
                   @if (old('apartment_type') === $oValue)
                     <option value="{{ $oValue  }}" selected>
@@ -58,15 +58,15 @@
           </div>
         </div>
 
-        <div class="mw9">
+        <div class="mw9 mt3 mt1-ns">
           <div class="cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="permanent_address">@lang('forms.REG_SELLER.PERMANENT_ADDRESS')</label>
+              <label class="fw4 lh-copy f6" for="address">@lang('forms.PROPERTY.ADDRESS')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="permanent_address" id="permanent_address" rows="3" cols="50" required autofocus>{{ old('permanent_address') }}</textarea>
-              @if ($errors->has('permanent_address'))
-                <small id="permanent_address-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('permanent_address') }}</small>
+              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="address" id="address" rows="3" cols="50" required>{{ old('address') }}</textarea>
+              @if ($errors->has('address'))
+                <small id="address-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('address') }}</small>
               @endif
             </div>
           </div>
@@ -75,12 +75,40 @@
         <div class="mw9 mt3 mt1-ns">
           <div class="cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="present_address">@lang('forms.REG_SELLER.PRESENT_ADDRESS')</label>
+              <label class="fw4 lh-copy f6" for="measurement">@lang('forms.PROPERTY.MEASUREMENT')</label>
+            </div>
+            <div class="fl w-80 w-40-ns pa2-ns pa1">
+              <input class="pa2 input-reset ba b--black-10 bg-transparent w-100 w-90-ns measure" type="text" name="measurement" id="measurement" value="{{ old('measurement') }}" min="1" max="10" maxlength="10" required>
+
+              @if ($errors->has('measurement'))
+                <small id="measurement-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('measurement') }}</small>
+              @endif
+            </div>
+
+            <div class="fl pa2-ns ph1">
+              <select name="measurement_type" id="measurement_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-60-ns" required>
+                @foreach ($propertyMeasurements as $oValue => $ptype)
+                  @if (old('measurement_type') === $oValue)
+                    <option value="{{ $oValue  }}" selected>
+                    {{ $ptype  }}</option>
+                  @else
+                    <option value="{{ $oValue  }}">{{ $ptype  }}</option>
+                  @endif
+                @endforeach
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="sale_price">@lang('forms.PROPERTY.SALE_PRICE')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="present_address" id="present_address" rows="3" cols="50" required>{{ old('present_address') }}</textarea>
-              @if ($errors->has('present_address'))
-                <small id="present_address-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('present_address') }}</small>
+              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="text" name="sale_price" id="sale_price" value="{{ old('sale_price') }}" min="1" max="11" maxlength="11" required>
+              @if ($errors->has('sale_price'))
+                <small id="sale_price-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('sale_price') }}</small>
               @endif
             </div>
           </div>
@@ -89,26 +117,12 @@
         <div class="mw9 mt3 mt1-ns">
           <div class="cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="contact_landline">@lang('forms.REG_SELLER.CONTACT_LANDLINE')</label>
+              <label class="fw4 lh-copy f6" for="min_expected_price">@lang('forms.PROPERTY.MIN_EXPECTED_PRICE')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="text" name="contact_landline" id="contact_landline" value="{{ old('contact_landline') }}" min="8" max="30" maxlength="30">
-              @if ($errors->has('contact_landline'))
-                <small id="contact_landline-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('contact_landline') }}</small>
-              @endif
-            </div>
-          </div>
-        </div>
-
-        <div class="mw9 mt3 mt1-ns">
-          <div class="cf ph2-ns">
-            <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="alternate_email">@lang('forms.REG_SELLER.ALTERNATE_E-MAIL')</label>
-            </div>
-            <div class="fl w-100 w-75-ns pa2-ns">
-              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="email" name="alternate_email" id="alternate_email" value="{{ old('alternate_email') }}" min="3" max="255">
-              @if ($errors->has('alternate_email'))
-                <small id="alternate_email-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('alternate_email') }}</small>
+              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="text" name="min_expected_price" id="min_expected_price" value="{{ old('min_expected_price') }}" min="1" max="11" maxlength="11" required>
+              @if ($errors->has('min_expected_price'))
+                <small id="min_expected_price-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('min_expected_price') }}</small>
               @endif
             </div>
           </div>
@@ -117,28 +131,70 @@
         <div class="mw9 mt3 mt1-ns">
           <div class="pr4 cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="homeloan_required">@lang('forms.REG_BUYER.HOMELOAN_REQUIRED')</label>
+              <label class="fw4 lh-copy f6" for="ownership">@lang('forms.PROPERTY.OWNERSHIP')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
               <div class="items-center w-20 di pr3">
-                <input class="" type="radio" name="homeloan_required" id="homeloan_required_yes" value="{{ old('homeloan_required') }}">
-                <label for="homeloan_required" class="lh-copy">@lang('forms.TEXT_YES')</label>
+                <input value="@lang('forms.PROPERTY.INDIVIDUAL')" type="radio" name="ownership" id="ownership_solo" value="{{ old('ownership') }}" required>
+                <label for="ownership" class="lh-copy">@lang('forms.PROPERTY.INDIVIDUAL')</label>
               </div>
               <div class="items-center w-20 di pr3">
-                <input class="" type="radio" name="homeloan_required" id="homeloan_required_no" value="{{ old('homeloan_required') }}">
-                <label for="homeloan_required" class="lh-copy">@lang('forms.TEXT_NO')</label>
+                <input value="@lang('forms.PROPERTY.JOINT')" type="radio" name="ownership" id="ownership_group" value="{{ old('ownership') }}">
+                <label for="ownership" class="lh-copy">@lang('forms.PROPERTY.JOINT')</label>
               </div>
-              @if ($errors->has('homeloan_required'))
-                <small id="homeloan_required-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('homeloan_required') }}</small>
+              @if ($errors->has('ownership'))
+                <small id="ownership-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('ownership') }}</small>
               @endif
             </div>
           </div>
         </div>
 
-        <div class="mw9">
+        <div class="mw9 mt3 mt1-ns">
           <div class="cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="homeloan_details">@lang('forms.REG_BUYER.HOMELOAN_DETAILS')</label>
+              <label class="fw4 lh-copy f6" for="joint_owners_name">@lang('forms.PROPERTY.JOINT_OWNERS_NAME')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="text" name="joint_owners_name" id="joint_owners_name" value="{{ old('joint_owners_name') }}" max="80" maxlength="80">
+              @if ($errors->has('joint_owners_name'))
+                <small id="joint_owners_name-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('joint_owners_name') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="amenities">@lang('forms.PROPERTY.AMENITIES')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="amenities" id="amenities" rows="3" cols="50">{{ old('homeloan_details') }}</textarea>
+              @if ($errors->has('amenities'))
+                <small id="amenities-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('amenities') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="locality_features">@lang('forms.PROPERTY.LOCALITY_FEATURES')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="locality_features" id="locality_features" rows="3" cols="50">{{ old('homeloan_details') }}</textarea>
+              @if ($errors->has('locality_features'))
+                <small id="locality_features-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('locality_features') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="homeloan_details">@lang('forms.PROPERTY.HOMELOAN_DETAILS')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
               <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="homeloan_details" id="homeloan_details" rows="3" cols="50">{{ old('homeloan_details') }}</textarea>
