@@ -16,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
   {
     // Warning component in views/components/
     Blade::component('components.warn', 'warn');
+
+    // Information component in views/components/
+    Blade::component('components.info', 'info');
   }
 
   /**

@@ -19,7 +19,7 @@ class PropertyController extends Controller
    */
   public function index()
   {
-    return __METHOD__;
+    return view('property.info');
   }
 
   /**
@@ -34,7 +34,7 @@ class PropertyController extends Controller
     if (null === $seller) {
       unset($seller);
 
-      return view('property.forbidden');
+      return view('property.info');
     } else {
       $propertyTypes = MMFormHelper::getPropertyTypes();
       $apartmentTypes = MMFormHelper::getApartmentTypes();

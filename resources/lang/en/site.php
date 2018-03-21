@@ -42,5 +42,9 @@ return [
 
   'FORBIDDEN' => 'Forbidden',
   'FORBIDDEN_MESSAGE' => 'You are not allowed to access this page!',
-  'FORBIDDEN_ANCHOR_LABLE' => 'Become a Seller for Free!',
+  'FORBIDDEN_ANCHOR_LABLE' => 'Home',
+
+  'MESSAGE_TEXT' => 'Message',
+  'INFO_MESSAGE' => 'You first needs to be a Seller to Add Property.',
+  'BECOME_A_SELLER_TEXT' => 'Become a Seller for Free!',
 ];
