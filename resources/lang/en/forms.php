@@ -6,6 +6,7 @@ return [
   'DEFAULT_SELECT_TEXT' => '-- Select --',
   'TEXT_YES' => 'Yes',
   'TEXT_NO' => 'No',
+  'PER_MONTH' => 'Per Month',
 
   'REGISTRATION' => [ // User Registration Form
     'SIGN_UP' => 'Sign Up',

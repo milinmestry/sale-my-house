@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\MestryMilin\Form as MMFormHelper;
+use App\Http\Requests\ValidateProperty;
+use App\Property;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Requests\ValidateProperty;
 use Illuminate\Support\Facades\Auth;
+use Lang;
 
 class PropertyController extends Controller
 {
@@ -17,7 +19,7 @@ class PropertyController extends Controller
    */
   public function index()
   {
-      //
+    return __METHOD__;
   }
 
   /**
@@ -30,12 +32,14 @@ class PropertyController extends Controller
     $seller = User::find(Auth::id())->seller;
 
     if (null === $seller) {
+      unset($seller);
+
       return view('property.forbidden');
     } else {
       $propertyTypes = MMFormHelper::getPropertyTypes();
       $apartmentTypes = MMFormHelper::getApartmentTypes();
       $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
-  
+
       return view('property.create', compact(
         'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
       ));
@@ -51,7 +55,31 @@ class PropertyController extends Controller
    */
   public function store(ValidateProperty $request)
   {
-    //
+    $seller = User::find(Auth::id())->seller;
+    $property = new Property;
+
+    $property->seller_id = $seller->id;
+    $property->property_type = $request->input('property_type');
+    $property->apartment_type = $request->input('apartment_type');
+    $property->measurement = $request->input('measurement');
+    $property->measurement_type = $request->input('measurement_type');
+    $property->maintenance_charges = $request->input('maintenance_charges');
+    $property->ownership = $request->input('ownership');
+    $property->joint_owners_name = $request->input('joint_owners_name');
+    $property->sale_price = $request->input('sale_price');
+    $property->min_expected_price = $request->input('min_expected_price');
+    $property->address = $request->input('address');
+    $property->homeloan_details = $request->input('homeloan_details');
+    $property->amenities = $request->input('amenities');
+    $property->locality_features = $request->input('locality_features');
+
+    $property->save();
+
+    unset($property, $seller);
+
+    return redirect('/property')->with(
+      'status', Lang::get('site.SUCCESS_MESSAGES.APARTMENT_STORED'
+    ));
   }
 
   /**

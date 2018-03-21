@@ -136,11 +136,17 @@
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
               <div class="items-center w-20 di pr3">
-                <input value="@lang('forms.PROPERTY.INDIVIDUAL')" type="radio" name="ownership" id="ownership_solo" value="{{ old('ownership') }}" required>
+                <input value="@lang('forms.PROPERTY.INDIVIDUAL')"
+                type="radio" name="ownership" id="ownership_solo"
+                {{ (Input::old('ownership') === trans('forms.PROPERTY.INDIVIDUAL'))
+                ? 'checked' : '' }} required>
                 <label for="ownership" class="lh-copy">@lang('forms.PROPERTY.INDIVIDUAL')</label>
               </div>
               <div class="items-center w-20 di pr3">
-                <input value="@lang('forms.PROPERTY.JOINT')" type="radio" name="ownership" id="ownership_group" value="{{ old('ownership') }}">
+                <input value="@lang('forms.PROPERTY.JOINT')"
+                type="radio" name="ownership" id="ownership_group"
+                {{ (Input::old('ownership') === trans('forms.PROPERTY.JOINT'))
+                ? 'checked' : '' }}>
                 <label for="ownership" class="lh-copy">@lang('forms.PROPERTY.JOINT')</label>
               </div>
               @if ($errors->has('ownership'))
@@ -167,10 +173,26 @@
         <div class="mw9 mt3 mt1-ns">
           <div class="cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="maintenance_charges">@lang('forms.PROPERTY.MAINTENANCE_CHARGES')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <input class="pa2 input-reset ba b--black-10 bg-transparent w-70 w-60-ns measure" type="text" name="maintenance_charges" id="min_expected_price" value="{{ old('maintenance_charges') }}" min="1" max="10" maxlength="10">
+              <small class="gray">@lang('forms.PER_MONTH')</small>
+
+              @if ($errors->has('maintenance_charges'))
+                <small id="maintenance_charges-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('maintenance_charges') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
               <label class="fw4 lh-copy f6" for="amenities">@lang('forms.PROPERTY.AMENITIES')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="amenities" id="amenities" rows="3" cols="50">{{ old('homeloan_details') }}</textarea>
+              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="amenities" id="amenities" rows="3" cols="50">{{ old('amenities') }}</textarea>
               @if ($errors->has('amenities'))
                 <small id="amenities-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('amenities') }}</small>
               @endif
@@ -184,7 +206,7 @@
               <label class="fw4 lh-copy f6" for="locality_features">@lang('forms.PROPERTY.LOCALITY_FEATURES')</label>
             </div>
             <div class="fl w-100 w-75-ns pa2-ns">
-              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="locality_features" id="locality_features" rows="3" cols="50">{{ old('homeloan_details') }}</textarea>
+              <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="locality_features" id="locality_features" rows="3" cols="50">{{ old('locality_features') }}</textarea>
               @if ($errors->has('locality_features'))
                 <small id="locality_features-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('locality_features') }}</small>
               @endif

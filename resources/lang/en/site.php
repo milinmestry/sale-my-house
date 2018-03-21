@@ -37,6 +37,7 @@ return [
     'SELLER_STORED' => 'You successfully registered as Seller.',
     'BUYER_STORED' => 'You successfully registered as Buyer.',
     'BROKER_STORED' => 'You successfully registered as Broker.',
+    'APARTMENT_STORED' => 'New Apartment added in your account.',
   ],
 
   'FORBIDDEN' => 'Forbidden',
