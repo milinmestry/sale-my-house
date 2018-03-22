@@ -33,6 +33,7 @@
 
         <!-- <link rel="stylesheet" href="{{ mix('/css/app.css') }}"> -->
         <link rel="stylesheet" href="{{ mix('/css/tachyons.min.css') }}">
+        <link rel="stylesheet" href="{{ mix('/css/top-nav.css') }}">
     </main>
   </body>
 </html>
