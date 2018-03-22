@@ -1,6 +1,35 @@
+#top-nav {
+  margin: 0;
+  padding: 7px 6px 0;
+  line-height: 100%;
+}
+
+#top-nav li {
+  padding: 0 0 8px;
+  float: left;
+  position: relative;
+  list-style: none;
+}
+
 /* main level link */
 
+#top-nav a {
+  color: #e7e5e5;
+  text-decoration: none;
+  display: block;
+  padding: 8px 20px;
+  margin: 0;
+}
+
+/* main level link hover */
+
 /* sub levels link hover */
+
+#top-nav ul li:hover a,
+#top-nav li:hover li a {
+  background: none;
+  border: none;
+}
 
 /* dropdown */
 
@@ -12,6 +41,8 @@
 
 #top-nav ul {
   display: none;
+  margin: 0;
+  padding: 0;
   width: 185px;
   position: absolute;
   top: 35px;
@@ -21,17 +52,30 @@
 #top-nav ul li {
   float: none;
   margin: 0;
-}
-
-#top-nav ul a {
-  font-weight: normal;
+  padding: 0;
 }
 
 /* level 3+ list */
 
 #top-nav ul ul {
-  left: 183px;
+  left: 181px;
   top: 0px;
+}
+
+/* rounded corners of first and last link */
+
+#top-nav ul li:first-child > a {
+  -webkit-border-top-left-radius: 9px;
+  -moz-border-radius-topleft: 9px;
+  -webkit-border-top-right-radius: 9px;
+  -moz-border-radius-topright: 9px;
+}
+
+#top-nav ul li:last-child > a {
+  -webkit-border-bottom-left-radius: 9px;
+  -moz-border-radius-bottomleft: 9px;
+  -webkit-border-bottom-right-radius: 9px;
+  -moz-border-radius-bottomright: 9px;
 }
 
 /* clearfix */
