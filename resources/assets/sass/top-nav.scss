@@ -1,11 +1,11 @@
 #top-nav {
-	margin: 0;
-	padding: 7px 6px 0;
+	// margin: 0;
+	// padding: 7px 6px 0;
 	line-height: 100%;
 }
 #top-nav li {
 	// margin: 0 5px;
-	padding: 0 0 8px;
+	// padding: 0 0 8px;
 	float: left;
 	position: relative;
 	list-style: none;
@@ -14,12 +14,12 @@
 
 /* main level link */
 #top-nav a {
-	color: #e7e5e5;
+	// color: #e7e5e5;
 	text-decoration: none;
 	display: block;
-	padding:  8px 20px;
+	// padding:  8px 20px;
 	margin: 0;
-	
+
 }
 #top-nav a:hover {
 	// background: #000;
@@ -54,7 +54,7 @@
 
 	margin: 0;
 	padding: 0;
-	width: 185px;
+	width: 181px;
 	position: absolute;
 	top: 35px;
 	left: 0;
@@ -108,11 +108,11 @@
 }
 #top-nav {
 	display: inline-block;
-} 
+}
 html[xmlns] #top-nav {
 	display: block;
 }
- 
+
 * html #top-nav {
 	height: 1%;
 }

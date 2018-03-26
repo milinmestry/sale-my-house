@@ -17,6 +17,9 @@ return [
      'LOGIN' => 'Sign In',
      'REGISTER' => 'Sign Up',
      'ADD_PROPERTY' => 'Add Property',
+     'MY_ACCOUNT' => 'My Account',
+     'MY_PROPERTIES' => 'My Properties',
+     'SEARCH_PROPERTIES' => 'Search Properties',
   ],
 
   'STR_SELLER' => 'Seller',
