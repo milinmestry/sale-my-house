@@ -11,7 +11,7 @@
   <body class="sans-serif">
     <main>
       <header>
-        <nav class="flex justify-between bb b--white-10 bg-navy o-70">
+        <nav class="flex justify-between bb b--white-10 bg-green">
           <a class="link white-70 no-underline flex items-center pa2" href="/">
             <img src="/images/icons/building-1.png" class="bg-white-80  hover-bg-white pa1" title="Home">
           </a>
@@ -19,11 +19,11 @@
         </nav>
       </header>
 
-      <div class="center w-100 db cf bg-light-gray pa3">
+      <div class="center w-100 db cf bg-washed-green pa3">
         @yield('content')
       </div>
 
-      <footer class="tc w-100 bg-navy o-70">
+      <footer class="tc w-100 bg-green">
       @if (Route::has('login'))
         @include('global.footer-nav')
       @endif

@@ -6,7 +6,7 @@
 @section('content')
 <div class="center">
   <article class="center mw5 mw6-ns br3 hidden ba b--black-10 mv4 shadow-1">
-    <h1 class="f4 bg-navy br3 br--top white mv0 pv2 ph3">@lang('forms.REGISTRATION.SIGN_IN')</h1>
+    <h1 class="f4 bg-green br3 br--top white mv0 pv2 ph3">@lang('forms.REGISTRATION.SIGN_IN')</h1>
     <div class="pa3 bt b--black-10 bg-white-60">
       <form method="POST" action="{{ route('login') }}" accept-charset="utf-8" autocomplete="off">
         @csrf
@@ -54,7 +54,7 @@
         </div>
 
         <div class="mt3 mt2-ns tc">
-          <input class="b ph4 pv2 input-reset ba b--navy white bg-navy pointer f6 br2 dim" type="submit" value="@lang('forms.BUTTON_SIGN_IN')">
+          <input class="b ph4 pv2 input-reset ba b--green white bg-green pointer f6 br2 dim" type="submit" value="@lang('forms.BUTTON_SIGN_IN')">
         </div>
 
       </form>

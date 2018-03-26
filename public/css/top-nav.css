@@ -38,9 +38,9 @@
   display: none;
   margin: 0;
   padding: 0;
-  width: 181px;
+  width: 180px;
   position: absolute;
-  top: 35px;
+  top: 30px;
   left: 0;
 }
 
@@ -53,7 +53,7 @@
 /* level 3+ list */
 
 #top-nav ul ul {
-  left: 181px;
+  left: 180px;
   top: 0px;
 }
 
