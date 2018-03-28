@@ -1,4 +1,40 @@
 <div class="flex-grow pa1 flex items-center">
+  <nav class="nav">
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="hover-bg-mid-gray hover-light-green no-underline" href="{{ url('/home') }}">@lang('site.MENU_LINKS.HOME')</a>
+      </li>
+      <li class="menu-item has-children">
+        <a class="hover-bg-mid-gray no-underline" href="{{ url('/home') }}">First 1</a>
+        <ul class="sub-menu bg-silver">
+          <li class="menu-item">
+            <a class="hover-bg-moon-gray no-underline" href="{{ url('/home') }}">First 1-1</a>
+              <ul class="sub-menu bg-moon-gray">
+                <li class="menu-item">
+                  <a class="hover-bg-near-white no-underline" href="{{ url('/home') }}">First 1-1-1</a>
+                </li>
+                <li class="menu-item">
+                <a href="{{ url('/home') }}">First 1-1-2</a>
+                </li>
+              </ul>
+          </li>
+          <li class="menu-item">
+            <a href="{{ url('/home') }}">First 1-2</a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="{{ url('/home') }}">Third</a></li>
+      <li class="menu-item"><a href="{{ url('/home') }}">Four</a></li>
+      <li class="menu-item"><a href="{{ url('/home') }}">Five</a></li>
+      <li class="menu-item">
+        <a href="{{ url('/home') }}">Six</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<div class="flex-grow pa1 flex items-center dn-ns">
   <ul id="top-nav" class="f6 yellow list ma0">
     <li class="white bb fl relative hover-bg-mid-gray">
       <a class="near-white no-underline db ma0 ph3 pv2 hover-white" href="{{ url('/home') }}">@lang('site.MENU_LINKS.HOME')</a>
