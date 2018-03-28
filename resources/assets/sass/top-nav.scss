@@ -54,10 +54,10 @@
 
 	margin: 0;
 	padding: 0;
-	width: 180px;
+	width: 155px;
 	position: absolute;
 	top: 30px;
-	left: 0;
+	left: -47px;
 	// border: solid 1px #b4b4b4;
 
 	// border-radius: 10px;
@@ -77,11 +77,11 @@
 
 /* level 3+ list */
 #top-nav ul ul {
-	left: 180px;
+	left: -155px;
 	top: 0px;
 }
 
-/* rounded corners of first and last link */
+/* rounded corners of first and last link
 #top-nav ul li:first-child > a {
 	-webkit-border-top-left-radius: 9px;
 	-moz-border-radius-topleft: 9px;
@@ -96,6 +96,7 @@
 	-webkit-border-bottom-right-radius: 9px;
 	-moz-border-radius-bottomright: 9px;
 }
+*/
 
 /* clearfix */
 #top-nav:after {
