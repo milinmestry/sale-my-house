@@ -168,12 +168,12 @@
 
 .nav .menu > .menu-item,
 .nav .menu > .menu-item .dropdown-icon {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav .menu > .menu-item,
 .nav .menu > .menu-item > a {
-  color: #ddd;
+  color: #000;
 }
 
 .nav .sub-menu,

@@ -11,8 +11,8 @@
   <body class="sans-serif">
     <main>
       <header>
-        <nav class="flex justify-between bb b--white-10 bg-green">
-          <a class="link white-70 no-underline flex items-center pa2" href="/">
+        <nav class="db dt-l w-100 border-box pa3 ph4-l bg-green">
+          <a class="db dtc-l v-mid mid-gray link w-100 w-10-l tc tl-l mb2 mb0-l" href="/">
             <img src="/images/icons/building-1.png" class="bg-white-80  hover-bg-white pa1" title="Home">
           </a>
           @include('global.top-nav')
