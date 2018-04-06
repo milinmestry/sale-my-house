@@ -110,9 +110,29 @@ class PropertyController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id)
+  public function edit($id = 0)
   {
-      //
+    if ($id < 1) {
+      return redirect('/property')->with(
+        'error', Lang::get('property.ERROR_MESSAGES.EDIT_ID_MISSING'
+      ));
+    }
+
+    // Property::findOrFail($id);
+    
+    if (!Property::find($id)) {
+      return redirect('/property')->with(
+        'warn', Lang::get('property.ERROR_MESSAGES.EDIT_ID_NOT_EXISTS'
+      ));
+    }
+
+    $propertyTypes = MMFormHelper::getPropertyTypes();
+    $apartmentTypes = MMFormHelper::getApartmentTypes();
+    $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
+
+    return view('property.create', compact(
+      'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
+    ));
   }
 
   /**

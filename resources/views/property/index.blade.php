@@ -4,6 +4,9 @@
 
 @section('content')
 
+@includeIf('global.error')
+@includeIf('global.warn')
+
 <div class="pa4-ns pa2">
   <h1 class="f4-ns f5 bg-black-30 br--top black-60 pv2 ph3 mv0">@lang('property.LIST_HEADING')</h1>
   <div class="overflow-auto">
@@ -25,7 +28,7 @@
       </thead>
       <tbody class="lh-copy">
         @forelse ($allProperties as $propertyObj)
-        <tr class="hover-bg-light-green">
+        <tr class="hover-bg-light-gray">
           <td class="pa3 bb b--black-10">{{ $propertyObj->property_type }}</td>
           <td class="pa3 bb b--black-10">{{ $propertyObj->apartment_type }}</td>
           <td class="pa3 bb b--black-10">{{ $propertyObj->address }}</td>
@@ -35,13 +38,13 @@
           <td class="pa3 bb b--black-10">{{ $propertyObj->updated_at }}</td>
           <td class="pa3 bb b--black-10">
             <div class="pa3 lh-copy">
-                <a class="black no-underline underline-hover bg-black-10 pa2" href="{{ route('property.edit', $propertyObj->id) }}">@lang('site.EDIT_TEXT')</a>
+                <a class="black no-underline underline-hover bg-black-10 pa2 hover-bg-silver" href="{{ route('property.edit', $propertyObj->id) }}">@lang('site.EDIT_TEXT')</a>
             </div>
           </td>
         </tr>
         @empty
-        <tr class="stripe-dark" colspan="7">
-          <td class="pa3">@lang('property.NO_PROPERTIES')</td>
+        <tr class="stripe-dark">
+          <td class="pa3 tc" colspan="7">@lang('property.NO_PROPERTIES')</td>
         </tr>
         @endforelse
       </tbody>
