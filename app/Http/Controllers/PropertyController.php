@@ -19,7 +19,17 @@ class PropertyController extends Controller
    */
   public function index()
   {
-    return view('property.info');
+    $allProperties = Property::where([
+      ['is_active', '=', 1],
+      ['seller_id', '=', Auth::id()]
+      ])
+      ->orderBy('id', 'desc')
+      ->take(10)
+      ->get();
+// dd($allProperties);
+    return view('property.index', compact(
+      'allProperties'
+    ));
   }
 
   /**
@@ -72,6 +82,7 @@ class PropertyController extends Controller
     $property->homeloan_details = $request->input('homeloan_details');
     $property->amenities = $request->input('amenities');
     $property->locality_features = $request->input('locality_features');
+    $property->is_active = 1; // May be Admin should verify and then approve it.
 
     $property->save();
 

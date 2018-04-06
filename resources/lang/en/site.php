@@ -51,4 +51,9 @@ return [
   'MESSAGE_TEXT' => 'Message',
   'INFO_MESSAGE' => 'You first needs to be a Seller to Add Property.',
   'BECOME_A_SELLER_TEXT' => 'Become a Seller for Free!',
+
+  'ACTIONS_TEXT' => 'Actions',
+  'EDIT_TEXT' => 'Edit',
+  'ADD_TEXT' => 'Add',
+  'DEL_TEXT' => 'Delete',
 ];
