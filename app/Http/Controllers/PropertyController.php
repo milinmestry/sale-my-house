@@ -119,8 +119,8 @@ class PropertyController extends Controller
     }
 
     // Property::findOrFail($id);
-    
-    if (!Property::find($id)) {
+
+    if (! $property = Property::find($id) ) {
       return redirect('/property')->with(
         'warn', Lang::get('property.ERROR_MESSAGES.EDIT_ID_NOT_EXISTS'
       ));
@@ -131,7 +131,7 @@ class PropertyController extends Controller
     $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
 
     return view('property.create', compact(
-      'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
+      'propertyTypes', 'apartmentTypes', 'propertyMeasurements', 'property'
     ));
   }
 

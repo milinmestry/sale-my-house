@@ -11,6 +11,6 @@ return [
 
   'ERROR_MESSAGES' => [
     'EDIT_ID_MISSING' => 'Application error, required information is missing.',
-    'EDIT_ID_NOT_EXISTS' => 'Sorry, requested data does not available.',
+    'EDIT_ID_NOT_EXISTS' => 'Sorry, requested data is not available.',
   ],
 ];
