@@ -57,4 +57,5 @@ return [
   'EDIT_TEXT' => 'Edit',
   'ADD_TEXT' => 'Add',
   'DEL_TEXT' => 'Delete',
+  'SHOW_TEXT' => 'Show',
 ];

@@ -99,9 +99,22 @@ class PropertyController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show($id = 0)
   {
-      //
+    if ($id < 1) {
+      return redirect('/property')->with(
+        'error', Lang::get('property.ERROR_MESSAGES.EDIT_ID_MISSING'
+      ));
+    }
+
+    // Check ID exists in the system, before updating the data
+    if (! $property = Property::find($id) ) {
+      return redirect('/property')->with(
+        'warn', Lang::get('property.ERROR_MESSAGES.EDIT_ID_NOT_EXISTS'
+      ));
+    }
+
+    return view('property.show', compact('property'));
   }
 
   /**
@@ -120,6 +133,7 @@ class PropertyController extends Controller
 
     // Property::findOrFail($id);
 
+    // Check ID exists in the system, before updating the data
     if (! $property = Property::find($id) ) {
       return redirect('/property')->with(
         'warn', Lang::get('property.ERROR_MESSAGES.EDIT_ID_NOT_EXISTS'
@@ -145,7 +159,12 @@ class PropertyController extends Controller
    */
   public function update(ValidateProperty $request, $id = 0)
   {
-    $property = Property::find($id);
+    // Check ID exists in the system, before updating the data
+    if (! $property = Property::find($id) ) {
+      return redirect('/property')->with(
+        'warn', Lang::get('property.ERROR_MESSAGES.EDIT_ID_NOT_EXISTS'
+      ));
+    }
 
     $property->property_type = $request->input('property_type');
     $property->apartment_type = $request->input('apartment_type');
@@ -160,7 +179,6 @@ class PropertyController extends Controller
     $property->homeloan_details = $request->input('homeloan_details');
     $property->amenities = $request->input('amenities');
     $property->locality_features = $request->input('locality_features');
-    // $property->is_active = 1;
 
     $property->save();
 

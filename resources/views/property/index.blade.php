@@ -30,17 +30,18 @@
       <tbody class="lh-copy">
         @forelse ($allProperties as $propertyObj)
         <tr class="hover-bg-light-gray">
-          <td class="pa3 bb b--black-10">{{ $propertyObj->property_type }}</td>
+          <td class="pa3 bb b--black-10">{{ ucfirst($propertyObj->property_type) }}</td>
           <td class="pa3 bb b--black-10">{{ $propertyObj->apartment_type }}</td>
           <td class="pa3 bb b--black-10">{{ $propertyObj->address }}</td>
           <td class="pa3 bb b--black-10 tr">{{ $propertyObj->sale_price }}</td>
           <td class="pa3 bb b--black-10 tr">{{ $propertyObj->min_expected_price
            }}</td>
           <td class="pa3 bb b--black-10">{{ $propertyObj->updated_at }}</td>
-          <td class="pa3 bb b--black-10">
-            <div class="pa3 lh-copy">
-                <a class="black no-underline underline-hover bg-black-10 pa2 hover-bg-silver" href="{{ route('property.edit', $propertyObj->id) }}">@lang('site.EDIT_TEXT')</a>
-            </div>
+          <td class="pa3 bb b--black-10 tl">
+            <section class="pa3">
+              <a class="link no-underline underline-hover black dib ph2 pv1 mv1 bg-black-10 hover-bg-silver" href="{{ route('property.edit', $propertyObj->id) }}">@lang('site.EDIT_TEXT')</a>
+              <a class="link no-underline underline-hover black dib ph2 pv1 bg-black-10 hover-bg-silver" href="{{ route('property.show', $propertyObj->id) }}">@lang('site.SHOW_TEXT')</a>
+            </section>
           </td>
         </tr>
         @empty
