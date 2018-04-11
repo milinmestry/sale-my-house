@@ -4,6 +4,7 @@
 
 @section('content')
 
+@includeIf('global.success')
 @includeIf('global.error')
 @includeIf('global.warn')
 
@@ -11,7 +12,7 @@
   <h1 class="f4-ns f5 bg-black-30 br--top black-60 pv2 ph3 mv0">@lang('property.LIST_HEADING')</h1>
   <div class="overflow-auto">
     <div class="pa2 tr">
-        <a class="black-80 fw7 no-underline underline-hover" href="{{ url('property/create') }}">&plus; @lang('site.MENU_LINKS.ADD_PROPERTY')</a>
+        <a class="black-80 fw7 no-underline underline-hover hover-green" href="{{ url('property/create') }}">&plus; @lang('site.MENU_LINKS.ADD_PROPERTY')</a>
     </div>
 
     <table class="f6 w-100 mw9 center" cellspacing="0">

@@ -1,6 +1,7 @@
 <?php
 return [
   'BUTTON_SAVE' => 'Save',
+  'BUTTON_UPDATE' => 'Update',
   'BUTTON_SIGN_IN' => 'Sign In',
   'BUTTON_CANCEL' => 'Cancel',
   'DEFAULT_SELECT_TEXT' => '-- Select --',
@@ -45,7 +46,8 @@ return [
   ],
 
   'PROPERTY' => [
-    'HEADING' => 'Add New Property',
+    'ADD_NEW_PROPERTY' => 'Add New Property',
+    'EDIT_NEW_PROPERTY' => 'Edit New Property',
     'PROPERTY_TYPE' => 'Property Type',
     'APARTMENT_TYPE' => 'Apartment Type',
     'ADDRESS' => 'Address',

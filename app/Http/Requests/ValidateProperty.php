@@ -30,7 +30,7 @@ class ValidateProperty extends FormRequest
       'measurement' => 'required|digits_between:1,5',
       'sale_price' => 'required|digits_between:1,15',
       'min_expected_price' => 'nullable|digits_between:1,15',
-      'maintenance_charges' => 'nullable|digits_between:1,5',
+      'maintenance_charges' => 'nullable|digits_between:1,8',
       'ownership' => 'required|string|max:15',
       'joint_owners_name' => 'nullable|string|max:80',
       'amenities' => 'nullable|string|max:800',

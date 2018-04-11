@@ -20,13 +20,13 @@ class PropertyController extends Controller
   public function index()
   {
     $allProperties = Property::where([
-      ['is_active', '=', 1],
-      ['seller_id', '=', Auth::id()]
+        ['is_active', '=', 1],
+        ['seller_id', '=', Auth::id()]
       ])
       ->orderBy('id', 'desc')
       ->take(10)
       ->get();
-// dd($allProperties);
+
     return view('property.index', compact(
       'allProperties'
     ));
@@ -129,22 +129,46 @@ class PropertyController extends Controller
     $propertyTypes = MMFormHelper::getPropertyTypes();
     $apartmentTypes = MMFormHelper::getApartmentTypes();
     $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
+    $editForm = 'T';
 
     return view('property.create', compact(
-      'propertyTypes', 'apartmentTypes', 'propertyMeasurements', 'property'
+      'propertyTypes', 'apartmentTypes', 'propertyMeasurements', 'property', 'editForm', 'id'
     ));
   }
 
   /**
    * Update the specified resource in storage.
    *
-   * @param  \Illuminate\Http\Request  $request
+   * @param  \Illuminate\Http\ValidateProperty  $request
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(ValidateProperty $request, $id = 0)
   {
-      //
+    $property = Property::find($id);
+
+    $property->property_type = $request->input('property_type');
+    $property->apartment_type = $request->input('apartment_type');
+    $property->measurement = $request->input('measurement');
+    $property->measurement_type = $request->input('measurement_type');
+    $property->maintenance_charges = $request->input('maintenance_charges');
+    $property->ownership = $request->input('ownership');
+    $property->joint_owners_name = $request->input('joint_owners_name');
+    $property->sale_price = $request->input('sale_price');
+    $property->min_expected_price = $request->input('min_expected_price');
+    $property->address = $request->input('address');
+    $property->homeloan_details = $request->input('homeloan_details');
+    $property->amenities = $request->input('amenities');
+    $property->locality_features = $request->input('locality_features');
+    // $property->is_active = 1;
+
+    $property->save();
+
+    unset($property);
+
+    return redirect('/property')->with(
+      'status', Lang::get('site.SUCCESS_MESSAGES.APARTMENT_UPDATED'
+    ));
   }
 
   /**
