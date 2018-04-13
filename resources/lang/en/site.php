@@ -59,4 +59,5 @@ return [
   'DEL_TEXT' => 'Delete',
   'SHOW_TEXT' => 'Show',
   'INR' => '&#8377;',
+  'NO_DATA' => 'No information given.',
 ];
