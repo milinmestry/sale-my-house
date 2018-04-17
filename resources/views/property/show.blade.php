@@ -1,7 +1,7 @@
 @extends('layouts.first')
 @section('title', trans('site.PAGE_TITLE.PROPERTY'))
 @section('content')
-<section class="cf mw5 mw7-ns center bg-moon-gray pa3 ph5-ns">
+<section class="cf mw5 mw7-ns center pa3 ph5-ns">
   <div class="fl w-100 w-50-m w-34-l bg-black-10 pv3 ph2 mb1 mr1">
     <b class="db f4 mb1">@lang('property.PROPERTY_TYPE')</b>
     <span class="f5 db lh-copy measure">
@@ -59,6 +59,15 @@
     <b class="db f4 mb1">@lang('forms.PROPERTY.HOMELOAN_DETAILS')</b>
     <span class="f5 db lh-copy measure">
     {{{ $property->homeloan_details ?? trans('site.NO_DATA') }}}</span>
+  </div>
+  <div class="fl w-100 w-50-m w-100-l bg-black-10 pv3 ph2 mb1">
+    <b class="db f4 mb1">@lang('forms.PROPERTY.PRIVATE_PROPERTY')</b>
+    <span class="f5 db lh-copy measure">
+    {{{ $property->is_private ? trans('forms.TEXT_YES') : trans('forms.TEXT_NO') }}}</span>
+    @if ($property->is_private == 1)
+      <span class="db lh-title">@lang('property.LAST_UPDATED')&colon;{{{ $property->is_private_ts }}}</span>
+      <small id="comment-desc" class="f5 red">@lang('property.PRIVATE_PROPERTY_MESSAGE')</small>
+    @endif
   </div>
 </section>
 

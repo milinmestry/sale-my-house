@@ -19,6 +19,33 @@
       @endif
 
         <div class="mw9 mt3 mt1-ns">
+          <div class="pr4 cf ph2-ns">
+            <div class="fl w-100 w-25-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="ownership">@lang('forms.PROPERTY.PRIVATE_PROPERTY')</label>
+            </div>
+            <div class="fl w-100 w-75-ns pa2-ns">
+              <div class="items-center w-20 di pr3">
+                <input value="0"
+                type="radio" name="is_private" id="is_private_no"
+                {{ (Input::old('is_private', $property->is_private ?? 0) === 0)
+                ? 'checked' : '' }} required>
+                <label for="is_private" class="lh-copy">@lang('forms.TEXT_NO')</label>
+              </div>
+              <div class="items-center w-20 di pr3">
+                <input value="1"
+                type="radio" name="is_private" id="is_private_yes"
+                {{ (Input::old('is_private', $property->is_private ?? '') === 1)
+                ? 'checked' : '' }}>
+                <label for="is_private" class="lh-copy">@lang('forms.TEXT_YES')</label>
+              </div>
+              @if ($errors->has('is_private'))
+                <small id="is_private-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('is_private') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
           <div class="cf ph2-ns">
             <div class="fl w-100 w-25-ns pa2-ns">
               <label class="fw4 lh-copy f6" for="property_type">@lang('forms.PROPERTY.PROPERTY_TYPE')</label>

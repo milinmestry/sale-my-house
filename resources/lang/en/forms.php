@@ -62,6 +62,7 @@ return [
     'JOINT_OWNERS_NAME' => 'Joint Owners Name',
     'INDIVIDUAL' => 'Individual',
     'JOINT' => 'Joint',
+    'PRIVATE_PROPERTY' => 'Hide from Buyers',
   ],
 
   'CASH_IN_HAND_RANGES' => [

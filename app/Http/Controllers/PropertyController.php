@@ -69,6 +69,7 @@ class PropertyController extends Controller
     $property = new Property;
 
     $property->seller_id = $seller->id;
+    $property->is_private = $request->input('is_private');
     $property->property_type = $request->input('property_type');
     $property->apartment_type = $request->input('apartment_type');
     $property->measurement = $request->input('measurement');
@@ -83,6 +84,12 @@ class PropertyController extends Controller
     $property->amenities = $request->input('amenities');
     $property->locality_features = $request->input('locality_features');
     $property->is_active = 1; // May be Admin should verify and then approve it.
+
+    if (1 === (int) $request->input('is_private')) {
+      $dtObj = new \DateTime();
+      $property->is_private_ts = $dtObj->format('Y-m-d H:i:s');
+      unset($dtObj);
+    }
 
     $property->save();
 
