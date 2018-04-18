@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
 
     // Information component in views/components/
     Blade::component('components.info', 'info');
+
+    // SVG file Eye Open
+    Blade::component('components.svg-eye_open', 'svgEyeOpen');
+
+    // SVG file Eye with diagonal line
+    Blade::component('components.svg-eye_with_line', 'svgEyeWithLine');
   }
 
   /**

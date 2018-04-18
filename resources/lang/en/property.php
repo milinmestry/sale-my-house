@@ -9,6 +9,7 @@ return [
   'LAST_UPDATED' => 'Last Updated',
   'NO_PROPERTIES' => 'You have not added any properties yet.',
   'PRIVATE_PROPERTY_MESSAGE' => 'Buyer(s) not able to search or buy this property.',
+  'PUBLIC_PROPERTY_MESSAGE' => 'Buyer(s) can search or buy this property.',
 
   'ERROR_MESSAGES' => [
     'EDIT_ID_MISSING' => 'Application error, required information is missing.',

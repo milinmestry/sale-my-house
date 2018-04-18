@@ -65,7 +65,7 @@
     <span class="f5 db lh-copy measure">
     {{{ $property->is_private ? trans('forms.TEXT_YES') : trans('forms.TEXT_NO') }}}</span>
     @if ($property->is_private == 1)
-      <span class="db lh-title">@lang('property.LAST_UPDATED')&colon;{{{ $property->is_private_ts }}}</span>
+      <span class="db lh-title">@lang('property.LAST_UPDATED')&colon; {{{ $property->is_private_ts }}}</span>
       <small id="comment-desc" class="f5 red">@lang('property.PRIVATE_PROPERTY_MESSAGE')</small>
     @endif
   </div>
