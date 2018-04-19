@@ -12,6 +12,11 @@ use Lang;
 
 class PropertyController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth');
+  }
+
   /**
    * Display a listing of the resource.
    *
@@ -20,7 +25,7 @@ class PropertyController extends Controller
   public function index()
   {
     $allProperties = Property::where([
-        ['is_active', '=', 1],
+        ['is_active', '=', Property::ACTIVE],
         ['seller_id', '=', Auth::id()]
       ])
       ->orderBy('id', 'desc')
@@ -83,7 +88,7 @@ class PropertyController extends Controller
     $property->homeloan_details = $request->input('homeloan_details');
     $property->amenities = $request->input('amenities');
     $property->locality_features = $request->input('locality_features');
-    $property->is_active = 1; // May be Admin should verify and then approve it.
+    $property->is_active = Property::ACTIVE; // May be Admin should verify and then approve it.
 
     if (1 === (int) $request->input('is_private')) {
       $dtObj = new \DateTime();
