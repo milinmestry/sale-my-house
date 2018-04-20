@@ -54,10 +54,12 @@ return [
   'BECOME_A_SELLER_TEXT' => 'Become a Seller for Free!',
 
   'ACTIONS_TEXT' => 'Actions',
-  'EDIT_TEXT' => 'Edit',
   'ADD_TEXT' => 'Add',
+  'CONTACT_TEXT' => 'Contact',
   'DEL_TEXT' => 'Delete',
+  'EDIT_TEXT' => 'Edit',
   'SHOW_TEXT' => 'Show',
   'INR' => '&#8377;',
   'NO_DATA' => 'No information given.',
+
 ];

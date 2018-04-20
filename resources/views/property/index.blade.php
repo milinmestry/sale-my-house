@@ -61,7 +61,7 @@
         </tr>
         @empty
         <tr class="stripe-dark">
-          <td class="pa2 tc" colspan="8">@lang('property.NO_PROPERTIES')</td>
+          <td class="pa2 tc" colspan="8">@lang('property.NO_PROPERTIES_SELLER')</td>
         </tr>
         @endforelse
       </tbody>

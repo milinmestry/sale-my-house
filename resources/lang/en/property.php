@@ -7,7 +7,8 @@ return [
   'SALE_PRICE' => 'Sale Price',
   'MIN_EXPECTED_PRICE' => 'Min. Expected Price',
   'LAST_UPDATED' => 'Last Updated',
-  'NO_PROPERTIES' => 'You have not added any properties yet.',
+  'NO_PROPERTIES_SELLER' => 'You have not added any properties yet.',
+  'NO_PROPERTIES_BUYER' => 'No properties found.',
   'PRIVATE_PROPERTY_MESSAGE' => 'Buyer(s) not able to search or buy this property.',
   'PUBLIC_PROPERTY_MESSAGE' => 'Buyer(s) can search or buy this property.',
 

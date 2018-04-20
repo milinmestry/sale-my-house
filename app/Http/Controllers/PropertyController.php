@@ -219,6 +219,15 @@ class PropertyController extends Controller
   }
 
   public function search() {
-    return 'searching...';
+    $allProperties = Property::where([
+      ['is_active', '=', Property::ACTIVE],
+      ])
+      ->orderBy('id', 'desc')
+      ->take(10)
+      ->get();
+
+    return view('property.search', compact(
+      'allProperties'
+    ));
   }
 }
