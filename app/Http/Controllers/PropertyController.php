@@ -14,7 +14,13 @@ class PropertyController extends Controller
 {
 
   public function __construct() {
-    $this->middleware('auth');
+    // $this->middleware('auth'); // All routes are protected
+
+    // Routes [create/store/edit/delete] are protected
+    // $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete']]);
+
+    // All routes are protected except [search]
+    $this->middleware('auth', ['except' => ['search']]);
   }
 
   /**
@@ -210,5 +216,9 @@ class PropertyController extends Controller
   public function destroy($id)
   {
       //
+  }
+
+  public function search() {
+    return 'searching...';
   }
 }

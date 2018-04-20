@@ -22,6 +22,8 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/property/search', 'PropertyController@search')->name('property-search');
+
 Route::resources([
   'broker' => 'BrokerController',
   'buyer' => 'BuyerController',
