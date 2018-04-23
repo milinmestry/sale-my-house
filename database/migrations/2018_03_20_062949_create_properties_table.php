@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePropertiesTable extends Migration {
 
-const TABLE_NAME = 'properties';
+  const TABLE_NAME = 'properties';
 
   /**
    * Run the migrations.
