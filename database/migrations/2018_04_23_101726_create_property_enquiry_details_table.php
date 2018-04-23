@@ -23,6 +23,7 @@ class CreatePropertyEnquiryDetailsTable extends Migration
       $table->integer('price_quoted')->nullable();
       $table->char('price_quoted_by', 25)->nullable();
       $table->timestamps();
+      $table->softDeletes()->nullable();
     });
   }
 

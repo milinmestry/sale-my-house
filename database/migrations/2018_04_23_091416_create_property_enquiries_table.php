@@ -37,6 +37,7 @@ class CreatePropertyEnquiriesTable extends Migration
       $table->boolean('presanctioned_homeloan')->nullable();
       $table->string('homeloan_details', 300)->nullable();
       $table->timestamps();
+      $table->softDeletes()->nullable();
     });
   }
 
