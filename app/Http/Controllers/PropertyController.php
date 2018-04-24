@@ -30,13 +30,9 @@ class PropertyController extends Controller
    */
   public function index()
   {
-    $allProperties = Property::where([
-        ['is_active', '=', Property::ACTIVE],
-        ['seller_id', '=', Auth::id()]
-      ])
-      ->orderBy('id', 'desc')
-      ->take(10)
-      ->get();
+     $allProperties = Property::getAllActiveProperties([
+      'sellerId' => Auth::id(),
+     ]);
 
     return view('property.index', compact(
       'allProperties'

@@ -27,6 +27,7 @@ Route::get('/property/search', 'PropertyController@search')->name('property-sear
 Route::resources([
   'broker' => 'BrokerController',
   'buyer' => 'BuyerController',
+  'enquiry' => 'PropertyEnquiryController',
   'property' => 'PropertyController',
   'seller' => 'SellerController',
   'user' => 'UserController',
