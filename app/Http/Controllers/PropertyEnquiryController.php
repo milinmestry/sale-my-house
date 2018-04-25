@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\PropertyEnquiry;
+use App\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,12 +44,16 @@ class PropertyEnquiryController extends Controller
 
       return view('property.info');
     } else {
-      // $propertyTypes = MMFormHelper::getPropertyTypes();
+      $properties = Property::getAllActiveProperties([
+        'sellerId' => Auth::id(),
+        'arrayOnly' => true,
+      ]);
+      // $properties = array_prepend($properties, '--Select--');
       // $apartmentTypes = MMFormHelper::getApartmentTypes();
       // $propertyMeasurements = MMFormHelper::getPropertyMeasurements();
-
+// dd($properties);
       return view('property-enquiry.create', compact(
-        'propertyTypes', 'apartmentTypes', 'propertyMeasurements'
+        'properties'
       ));
     }
   }

@@ -1,11 +1,13 @@
 <?php
 return [
+  'ADD_ENQUIRY' => 'Add Property Enquiry',
+  'EDIT_ENQUIRY' => 'Edit Property Enquiry',
   'LIST_HEADING' => 'My Property Enquiries',
   'PAGE_TITLE' => 'Property Enquiry form',
   'PROPERTY' => 'Property',
   'ENQUIRY_FROM' => 'Enquiry From',
   'FULLNAME' => 'Complete Name',
-  'MOBILE' => 'Mobile Name',
+  'MOBILE' => 'Mobile',
   'CONTACT_NUMBERS' => 'Contact Numbers',
   'ADDRESS' => 'Address',
   'ZIPCODE' => 'Zipcode',
