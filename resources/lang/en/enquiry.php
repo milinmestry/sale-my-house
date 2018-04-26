@@ -27,4 +27,7 @@ return [
     'EDIT_ID_MISSING' => 'Application error, required information is missing.',
     'EDIT_ID_NOT_EXISTS' => 'Sorry, requested data is not available.',
   ],
+  'SUCCESS_MESSAGES' => [
+    'STORED' => 'New property enquiry added.'
+  ],
 ];

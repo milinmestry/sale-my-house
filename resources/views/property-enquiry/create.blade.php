@@ -283,7 +283,7 @@
                 <label class="fw4 lh-copy f6" for="homeloan_details">@lang('enquiry.HOMELOAN_DETAILS')</label>
               </div>
               <div class="fl w-100 w-70-ns pa2-ns">
-                <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="homeloan_details" id="homeloan_details" rows="3" cols="50" required>{{ old('homeloan_details', $enquiry->homeloan_details ?? '') }}</textarea>
+                <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="homeloan_details" id="homeloan_details" rows="3" cols="50">{{ old('homeloan_details', $enquiry->homeloan_details ?? '') }}</textarea>
                 @if ($errors->has('homeloan_details'))
                   <small id="homeloan_details-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('homeloan_details') }}</small>
                 @endif

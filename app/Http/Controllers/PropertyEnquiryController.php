@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\PropertyEnquiry;
 use App\User;
-use App\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,7 +66,32 @@ class PropertyEnquiryController extends Controller
    */
   public function store(Request $request)
   {
-      //
+    $pEnquiry = new PropertyEnquiry;
+
+    $pEnquiry->property_id = $request->input('property_id');
+    $pEnquiry->fullname = $request->input('fullname');
+    $pEnquiry->mobile = $request->input('mobile');
+    $pEnquiry->contact_numbers = $request->input('contact_numbers');
+    $pEnquiry->address = $request->input('address');
+    $pEnquiry->zipcode = $request->input('zipcode');
+    $pEnquiry->enquiry_from = $request->input('enquiry_from');
+    $pEnquiry->broker_name = $request->input('broker_name');
+    $pEnquiry->broker_details = $request->input('broker_details');
+    $pEnquiry->referer_name = $request->input('referer_name');
+    $pEnquiry->referer_contact = $request->input('referer_contact');
+    $pEnquiry->referer_address = $request->input('referer_address');
+    $pEnquiry->cash_in_hand = $request->input('cash_in_hand');
+    $pEnquiry->need_homeloan = $request->input('need_homeloan');
+    $pEnquiry->homeloan_presanctioned = $request->input('homeloan_presanctioned');
+    $pEnquiry->homeloan_details = $request->input('homeloan_details');
+
+    $pEnquiry->save();
+
+    unset($pEnquiry);
+
+    return redirect('/enquiry')->with(
+      'status', Lang::get('enquiry.SUCCESS_MESSAGES.STORED')
+    );
   }
 
   /**
