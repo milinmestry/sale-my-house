@@ -7,7 +7,9 @@
       {{ isset($editForm) ? trans('enquiry.EDIT_ENQUIRY') : trans('enquiry.ADD_ENQUIRY') }}
     </h1>
     <div class="pa3 bt b--black-10 bg-white">
-      <form method="POST" action="{{ isset($editForm) ? route('property.update',$id) : route('property.store') }}" accept-charset="utf-8" autocomplete="off">
+      <form method="POST" action="{{ isset($editForm) ? route('enquiry.update',$id) : route('enquiry.store') }}" accept-charset="utf-8" autocomplete="off">
+        @csrf
+
         @if (isset($editForm))
         @method('PUT')
         @endif
@@ -104,6 +106,43 @@
           </div>
         </div>
 
+        <fieldset class="ba b--gray b--dashed mt2">
+          <legend class="b bg-light-gray pa1">@lang('enquiry.TEXT_ENQUIRY_VISIT')</legend>
+          <div class="mw9 mt3 mt1-ns">
+            <div class="cf ph2-ns">
+              <div class="fl w-100 w-30-ns pa2-ns">
+                <label class="fw4 lh-copy f6" for="enquiry_visit_type">@lang('enquiry.TEXT_ENQUIRY_PURPOSE')</label>
+              </div>
+              <div class="fl w-100 w-70-ns pa2-ns">
+                <select name="enquiry_visit_type" id="enquiry_visit_type" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns" required autofocus>
+                  @foreach ($enquiryPurposes as $pKey => $purposeText)
+                  <option value="{{ $pKey }}" {{ (old('enquiry_visit_type', $enquiry->enquiry_visit_type ?? '') == $pKey) ? 'selected' : '' }} required>{{ $purposeText }}
+                  </option>
+                  @endforeach
+                </select>
+
+                @if ($errors->has('enquiry_visit_type'))
+                  <small id="enquiry_visit_type-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('enquiry_visit_type') }}</small>
+                @endif
+              </div>
+            </div>
+          </div>
+
+          <div class="mw9 mt3 mt1-ns">
+            <div class="cf ph2-ns">
+              <div class="fl w-100 w-30-ns pa2-ns">
+                <label class="fw4 lh-copy f6" for="offer_amount">@lang('enquiry.OFFER_AMOUNT')</label>
+              </div>
+              <div class="fl w-100 w-70-ns pa2-ns">
+                <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="text" name="offer_amount" id="offer_amount" value="{{ old('offer_amount', $enquiry->offer_amount ?? '') }}" min="0" max="20" maxlength="20">
+                @if ($errors->has('offer_amount'))
+                  <small id="offer_amount-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('offer_amount') }}</small>
+                @endif
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
         <div class="mw9 mt3 mt1-ns">
           <div class="pr4 cf ph2-ns">
             <div class="fl w-100 w-30-ns pa2-ns">
@@ -198,7 +237,7 @@
                 <label class="fw4 lh-copy f6" for="referer_address">@lang('enquiry.REFERER_ADDRESS')</label>
               </div>
               <div class="fl w-100 w-70-ns pa2-ns">
-                <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="referer_address" id="referer_address" rows="3" cols="50" required>{{ old('referer_address', $enquiry->referer_address ?? '') }}</textarea>
+                <textarea class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" name="referer_address" id="referer_address" rows="3" cols="50">{{ old('referer_address', $enquiry->referer_address ?? '') }}</textarea>
                 @if ($errors->has('referer_address'))
                   <small id="referer_address-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('referer_address') }}</small>
                 @endif

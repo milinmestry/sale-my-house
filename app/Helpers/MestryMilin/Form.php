@@ -36,4 +36,15 @@ class Form {
     ];
   }
 
+  public static function getEnquiryPurposes($select = true) {
+    $first = $select ? '-- Select --' : '';
+    return [
+      '' => $first,
+      'buyer-call' => 'Buyer Call',
+      'buyer-site-visit' => 'Buyer Site Visit',
+      'broker-call' => 'Broker Call',
+      'broker-site-visit' => 'Broker Site Visit',
+    ];
+  }
+
 }

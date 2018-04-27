@@ -20,6 +20,9 @@ return [
   'NEED_HOMELOAN' => 'Need Homeloan',
   'HOMELOAN_PRESANCTIONED' => 'Homeloan Presanctioned',
   'HOMELOAN_DETAILS' => 'Homeloan Details',
+  'OFFER_AMOUNT' => 'Offer Amount',
+  'TEXT_ENQUIRY_VISIT' => 'Enquiry Visit Details',
+  'TEXT_ENQUIRY_PURPOSE' => 'Enquiry Purpose',
   'TEXT_REFERER' => 'Referer',
   'TEXT_BUYER_FUNDING' => 'Buyer Fund Details',
 
