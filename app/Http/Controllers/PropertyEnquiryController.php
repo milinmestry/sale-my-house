@@ -90,12 +90,15 @@ class PropertyEnquiryController extends Controller
     $pEnquiry->save();
 
     if ($pEnquiry->id > 0) {
-      // $pEnquiryDetails = new PropertyEnquiryDetails;
+      $pEnquiryDetails = new PropertyEnquiryDetails;
 
-      // $pEnquiryDetails->property_enquiry_id = $pEnquiry->id;
-      // $pEnquiryDetails->enquire_visit_type = $request->input('enquiry_visit_type');
-      // $pEnquiryDetails->price_quoted = $request->input('offer_amount');
-      // $pEnquiryDetails->price_quoted_by = $request->input('fullname');
+      $pEnquiryDetails->property_enquiry_id = $pEnquiry->id;
+      $pEnquiryDetails->enquire_visit_type = $request->input('enquiry_visit_type');
+      $pEnquiryDetails->price_quoted = $request->input('offer_amount');
+      $pEnquiryDetails->price_quoted_by = $request->input('fullname');
+
+      $pEnquiryDetails->save();
+      unset($pEnquiryDetails);
     }
 
     unset($pEnquiry);

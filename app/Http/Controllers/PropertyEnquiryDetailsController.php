@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\PropertyEnquiryDetails;
 use Illuminate\Http\Request;
 
 class PropertyEnquiryDetailsController extends Controller
@@ -35,14 +34,7 @@ class PropertyEnquiryDetailsController extends Controller
    */
   public function store(Request $request)
   {
-    $pEnquiryDetails = new PropertyEnquiryDetails;
 
-    $pEnquiryDetails->property_enquiry_id = $pEnquiry->id;
-    $pEnquiryDetails->enquire_visit_type = $request->input('enquiry_visit_type');
-    $pEnquiryDetails->price_quoted = $request->input('offer_amount');
-    $pEnquiryDetails->price_quoted_by = $request->input('fullname');
-
-    $pEnquiryDetails->save();
   }
 
   /**
