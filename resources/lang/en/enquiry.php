@@ -1,6 +1,7 @@
 <?php
 return [
   'ADD_ENQUIRY' => 'Add Property Enquiry',
+  'ENQUIRY_DATETIME' => 'Enquiry Date',
   'EDIT_ENQUIRY' => 'Edit Property Enquiry',
   'LIST_HEADING' => 'My Property Enquiries',
   'PAGE_TITLE' => 'Property Enquiry form',
@@ -25,6 +26,7 @@ return [
   'TEXT_ENQUIRY_PURPOSE' => 'Enquiry Purpose',
   'TEXT_REFERER' => 'Referer',
   'TEXT_BUYER_FUNDING' => 'Buyer Fund Details',
+  'NO_ENQUIRIES_SELLER' => 'Sorry! No enquiry available for your property.',
 
   'ERROR_MESSAGES' => [
     'EDIT_ID_MISSING' => 'Application error, required information is missing.',

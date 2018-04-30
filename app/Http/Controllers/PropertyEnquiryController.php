@@ -31,7 +31,13 @@ class PropertyEnquiryController extends Controller
    */
   public function index()
   {
-    return 'THnks';
+    $allEnquries = PropertyEnquiry::getAllEnquiries([
+      'sellerId' => Auth::id(),
+     ]);
+
+    return view('enquiry.index', compact(
+      'allEnquries'
+    ));
   }
 
   /**
