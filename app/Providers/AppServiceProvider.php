@@ -16,11 +16,11 @@ class AppServiceProvider extends ServiceProvider
   {
 
     // View SQL query on the browser
-    \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {
-      echo '<pre>';
-      print_r([ $query->sql, $query->bindings, $query->time ]);
-      echo '</pre>';
-    });
+    // \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {
+    //   echo '<pre>';
+    //   print_r([ $query->sql, $query->bindings, $query->time ]);
+    //   echo '</pre>';
+    // });
 
     // Warning component in views/components/
     Blade::component('components.warn', 'warn');

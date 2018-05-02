@@ -1,7 +1,7 @@
 <?php
 namespace App\Helpers\MestryMilin;
 
-// use Illuminate\
+use Lang;
 
 class Form {
 
@@ -45,6 +45,21 @@ class Form {
       'broker-call' => 'Broker Call',
       'broker-site-visit' => 'Broker Site Visit',
     ];
+  }
+
+  public static function boolToString($boolVal = null, $default = '') {
+    switch ($boolVal) {
+      case 0:
+      case false:
+        return Lang::get('forms.TEXT_NO');
+
+      case 1:
+      case true:
+        return Lang::get('forms.TEXT_YES');
+
+      default:
+        return $default;
+    }
   }
 
 }

@@ -22,6 +22,8 @@ return [
   'HOMELOAN_PRESANCTIONED' => 'Homeloan Presanctioned',
   'HOMELOAN_DETAILS' => 'Homeloan Details',
   'OFFER_AMOUNT' => 'Offer Amount',
+  'YOUR_OFFER' => 'Your Offer Amount',
+  'DATETIME' => 'Enquiry Datetime',
   'TEXT_ENQUIRY_VISIT' => 'Enquiry Visit Details',
   'TEXT_ENQUIRY_PURPOSE' => 'Enquiry Purpose',
   'TEXT_REFERER' => 'Referer',

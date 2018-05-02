@@ -76,6 +76,7 @@ class PropertyEnquiryController extends Controller
   {
     $pEnquiry = new PropertyEnquiry;
 
+    $pEnquiry->seller_id = Auth::id();
     $pEnquiry->property_id = $request->input('property_id');
     $pEnquiry->fullname = $request->input('fullname');
     $pEnquiry->primary_mobile = $request->input('mobile');
