@@ -112,12 +112,39 @@
               <label class="fw4 lh-copy f6" for="enquiry_datetime">@lang('enquiry.DATETIME')</label>
             </div>
             <div class="fl w-100 w-70-ns pa2-ns">
-            <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-40-ns measure" type="date" name="enquiry_datetime" id="enquiry_datetime" value="{{ old('enquiry_datetime', $enquiry->enquiry_datetime ?? '') }}" max="{{ date('Y-m-d') }}" required>
-            <input type="number" min="0" max="23" name="eHour" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-10-ns measure" placeholder="HH">
-            <input type="number" min="0" max="59" name="eMinute" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-10-ns measure">
-            <input type="number" min="0" max="59" name="eSecond" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-10-ns measure" value="{{ old('eSecond', $enquiry->eSecond ?? '0') }}">
+            <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-30-ns measure" type="date" name="enquiry_datetime" id="enquiry_datetime" value="{{ old('enquiry_datetime', $enquiry->enquiry_datetime ?? '') }}" max="{{ date('Y-m-d') }}" required>
+            <input type="number" min="0" max="23" name="eHour" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w3-ns measure">
+            <input type="number" min="0" max="59" name="eMinute" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w3-ns measure">
+            <input type="number" min="0" max="59" name="eSecond" class="pa2 input-reset ba b--black-10 bg-transparent w-90 w3-ns measure" value="{{ old('eSecond', $enquiry->eSecond ?? '0') }}">
               @if ($errors->has('enquiry_datetime'))
                 <small id="enquiry_datetime-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('enquiry_datetime') }}</small>
+              @endif
+            </div>
+          </div>
+        </div>
+
+        <div class="mw9 mt3 mt1-ns">
+          <div class="pr4 cf ph2-ns">
+            <div class="fl w-100 w-30-ns pa2-ns">
+              <label class="fw4 lh-copy f6" for="enquiry_from">@lang('enquiry.ENQUIRY_FROM')</label>
+            </div>
+            <div class="fl w-100 w-70-ns pa2-ns">
+              <div class="items-center w-20 di pr3">
+                <input value="0"
+                type="radio" name="enquiry_from" id="enquiry_from_buyer"
+                {{ (Input::old('enquiry_from', $enquiry->enquiry_from ?? '') === trans('enquiry.BUYER'))
+                ? 'checked' : '' }} required>
+                <label for="enquiry_from" class="fw4 lh-copy f6">@lang('site.STR_BUYER')</label>
+              </div>
+              <div class="items-center w-20 di pr3">
+                <input value="1"
+                type="radio" name="enquiry_from" id="enquiry_from_broker"
+                {{ (Input::old('enquiry_from', $property->enquiry_from ?? '') === trans('site.STR_BROKER'))
+                ? 'checked' : '' }}>
+                <label for="enquiry_from" class="fw4 lh-copy f6">@lang('site.STR_BROKER')</label>
+              </div>
+              @if ($errors->has('enquiry_from'))
+                <small id="enquiry_from-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('enquiry_from') }}</small>
               @endif
             </div>
           </div>
@@ -158,34 +185,21 @@
               </div>
             </div>
           </div>
-        </fieldset>
 
-        <div class="mw9 mt3 mt1-ns">
-          <div class="pr4 cf ph2-ns">
-            <div class="fl w-100 w-30-ns pa2-ns">
-              <label class="fw4 lh-copy f6" for="enquiry_from">@lang('enquiry.ENQUIRY_FROM')</label>
-            </div>
-            <div class="fl w-100 w-70-ns pa2-ns">
-              <div class="items-center w-20 di pr3">
-                <input value="0"
-                type="radio" name="enquiry_from" id="enquiry_from_buyer"
-                {{ (Input::old('enquiry_from', $enquiry->enquiry_from ?? '') === trans('enquiry.BUYER'))
-                ? 'checked' : '' }} required>
-                <label for="enquiry_from" class="fw4 lh-copy f6">@lang('site.STR_BUYER')</label>
+          <div class="mw9 mt3 mt1-ns">
+            <div class="cf ph2-ns">
+              <div class="fl w-100 w-30-ns pa2-ns">
+                <label class="fw4 lh-copy f6" for="seller_offer">@lang('enquiry.YOUR_OFFER')</label>
               </div>
-              <div class="items-center w-20 di pr3">
-                <input value="1"
-                type="radio" name="enquiry_from" id="enquiry_from_broker"
-                {{ (Input::old('enquiry_from', $property->enquiry_from ?? '') === trans('site.STR_BROKER'))
-                ? 'checked' : '' }}>
-                <label for="enquiry_from" class="fw4 lh-copy f6">@lang('site.STR_BROKER')</label>
+              <div class="fl w-100 w-70-ns pa2-ns">
+                <input class="pa2 input-reset ba b--black-10 bg-transparent w-90 w-80-ns measure" type="text" name="seller_offer" id="offer_amount" value="{{ old('seller_offer', $enquiry->seller_offer ?? '') }}" min="0" max="20" maxlength="20">
+                @if ($errors->has('seller_offer'))
+                  <small id="seller_offer-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('seller_offer') }}</small>
+                @endif
               </div>
-              @if ($errors->has('enquiry_from'))
-                <small id="enquiry_from-error" class="f6 black-60 db mb2 pv1 red">{{ $errors->first('enquiry_from') }}</small>
-              @endif
             </div>
           </div>
-        </div>
+        </fieldset>
 
         <fieldset class="ba b--gray b--dashed mt2">
           <legend class="b bg-light-gray pa1">@lang('site.STR_BROKER')</legend>

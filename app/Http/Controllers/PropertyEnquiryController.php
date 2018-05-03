@@ -93,6 +93,8 @@ class PropertyEnquiryController extends Controller
     $pEnquiry->need_homeloan = $request->input('need_homeloan');
     $pEnquiry->presanctioned_homeloan = $request->input('homeloan_presanctioned');
     $pEnquiry->homeloan_details = $request->input('homeloan_details');
+    $eDatetime = $request->input('enquiry_datetime') . ' ' . $request->input('eHour') . ':' . $request->input('eMinute') . ':' . $request->input('eSecond');
+    $pEnquiry->enquiry_datetime = $eDatetime;
 
     $pEnquiry->save();
 
@@ -102,7 +104,9 @@ class PropertyEnquiryController extends Controller
       $pEnquiryDetails->property_enquiry_id = $pEnquiry->id;
       $pEnquiryDetails->enquire_visit_type = $request->input('enquiry_visit_type');
       $pEnquiryDetails->price_quoted = $request->input('offer_amount');
+      $pEnquiryDetails->seller_offer = $request->input('seller_offer');
       $pEnquiryDetails->price_quoted_by = $request->input('fullname');
+      $pEnquiryDetails->details_datetime = $eDatetime;
 
       $pEnquiryDetails->save();
       unset($pEnquiryDetails);

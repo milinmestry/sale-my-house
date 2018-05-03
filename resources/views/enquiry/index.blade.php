@@ -39,7 +39,7 @@
           <td class="pa2 bb b--black-10">{{ MMFormHelper::boolToString($enquiryObj->need_homeloan) ?? '-' }}</td>
           <td class="pa2 bb b--black-10 tr">{{ $enquiryObj->price_quoted ?? '-'
            }}</td>
-          <td class="pa2 bb b--black-10">{{ $enquiryObj->created_at ?? '-' }}</td>
+          <td class="pa2 bb b--black-10">{{ $enquiryObj->enquiry_datetime ?? '-' }}</td>
           <td class="pa2 bb b--black-10 tl">
             <section class="pa2">
               <a class="link no-underline underline-hover black dib ph2 pv1 mv1 bg-black-10 hover-bg-silver" href="{{ route('enquiry.edit', $enquiryObj->id) }}">@lang('site.EDIT_TEXT')</a>
