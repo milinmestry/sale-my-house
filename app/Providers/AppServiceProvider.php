@@ -14,6 +14,14 @@ class AppServiceProvider extends ServiceProvider
    */
   public function boot()
   {
+
+    // View SQL query on the browser
+    // \Event::listen('Illuminate\Database\Events\QueryExecuted', function ($query) {
+    //   echo '<pre>';
+    //   print_r([ $query->sql, $query->bindings, $query->time ]);
+    //   echo '</pre>';
+    // });
+
     // Warning component in views/components/
     Blade::component('components.warn', 'warn');
 
@@ -25,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
     // SVG file Eye with diagonal line
     Blade::component('components.svg-eye_with_line', 'svgEyeWithLine');
+
   }
 
   /**

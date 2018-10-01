@@ -23,6 +23,17 @@
               </li>
             </ul>
         </li>
+        <li class="menu-item has-children">
+          <a class="hover-bg-moon-gray no-underline" href="#">@lang('site.MENU_LINKS.ENQUIRY')<span class="dropdown-icon"></span></a>
+          <ul class="sub-menu bg-moon-gray">
+            <li class="menu-item">
+              <a class="hover-bg-near-white no-underline" href="{{ url('/enquiry/create') }}">@lang('site.MENU_LINKS.ADD_ENQUIRY')</a>
+            </li>
+            <li class="menu-item">
+            <a class="hover-bg-near-white no-underline" href="{{ url('/enquiry') }}">@lang('site.MENU_LINKS.LIST_ENQUIRY')</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li class="menu-item">

@@ -4,18 +4,12 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdatePropertiesAddColumns extends Migration
+class UpdatePropertyEnquiryDetailsDatetimeTable extends Migration
 {
-  const TABLE_NAME = 'properties';
+  const TABLE_NAME = 'property_enquiry_details';
 
   /**
    * Run the migrations.
-   *
-   * New Columns:
-   *
-   * 01 is_private: Wheather this property is mark as private, so Buyer(s) won't
-   *    be able to search for this property.
-   * 02 is_private_ts: Timestamp when Seller mark a property as private.
    *
    * @return void
    */
@@ -23,8 +17,8 @@ class UpdatePropertiesAddColumns extends Migration
   {
     Schema::table(self::TABLE_NAME, function (Blueprint $table) {
       if (Schema::hasTable(self::TABLE_NAME)) {
-        $table->boolean('is_private')->default(0)->after('locality_features');
-        $table->timestamp('is_private_ts')->nullable()->after('is_private');
+        $table->integer('seller_offer')->nullable()->after('price_quoted_by');
+        $table->timestamp('details_datetime')->nullable()->after('seller_offer');
       }
     });
   }
@@ -39,7 +33,7 @@ class UpdatePropertiesAddColumns extends Migration
     Schema::table(self::TABLE_NAME, function (Blueprint $table) {
       if (Schema::hasTable(self::TABLE_NAME)) {
         $table->dropColumn([
-          'is_private', 'is_private_ts'
+          'seller_offer', 'details_datetime'
         ]);
       }
     });
